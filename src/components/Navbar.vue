@@ -2,7 +2,7 @@
 
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <div class="container-fluid">
-   <router-link :to="{name:'home'}" class="navbar-brand">L & H</router-link>
+   <router-link :to="{name:'home'}" class="navbar-brand">Say Hi</router-link>
       <div class="navbar-nav mr-auto">
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -16,7 +16,7 @@
         </li>
         <li class="nav-item">
            <router-link :to="{name :'register'}" class="nav-link">
-            <font-awesome-icon icon="user-plus" /> Sign Up
+            <font-awesome-icon icon="user-plus" /> Register
           </router-link>
         </li>
         <li class="nav-item">
@@ -25,13 +25,13 @@
           </router-link>
         </li>
           <li class="nav-item">
-           <router-link :to="{name:'cart'}" class="nav-link"> Cart</router-link>
+           <router-link :to="{name:'cart'}" class="nav-link"> Favourites</router-link>
         </li>
             <li class="nav-item">
-           <router-link :to="{name:'products'}" class="nav-link"> Products</router-link>
+           <router-link :to="{name:'blogs'}" class="nav-link"> Blogs</router-link>
         </li>
         <li class="nav-item">
-        <router-link class="but nav-link" to="/Login">Log Out</router-link>
+        <router-link class="but nav-link" to="/Login"><i class='bx bx-log-out-circle'></i></router-link>
         </li>
       </ul>
        </div>
