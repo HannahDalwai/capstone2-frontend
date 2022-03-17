@@ -64,16 +64,17 @@ a:hover, a:focus {
 }
 
 .form-control {
-  background: #212529;
-  border-color: #545454;
+  background: #41493b;
+  border-color: #a4ae9d;
 }
 
 .form-control:focus {
-  background: #212529;
+  background: #41493b;
 }
 
 footer {
-  background: #212529;
+  background: #41493b;
+  margin-top: 10%;
 }
 
 </style>

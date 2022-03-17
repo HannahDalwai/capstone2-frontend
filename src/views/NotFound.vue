@@ -317,7 +317,7 @@
     </div>
   </div>
 </div>
-  </a>
+
 </template>
 
 <script>

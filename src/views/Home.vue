@@ -6,7 +6,7 @@
     <div class="col">
      <h1 class="display-6"><strong>Your journey begins here</strong></h1>
      <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quaerat reprehenderit minus molestiae velit provident atque adipisci cumque assumenda saepe, rerum fugit reiciendis labore necessitatibus recusandae. Repudiandae sint quidem blanditiis accusantium.</p>
-		    <button class="col btn btn-green-moon btn-rounded">Start Journey</button>
+		    <button class="col btn btn-green-moon btn-rounded">Start your Journey</button>
     </div>
     <div class="col">
     <img src="https://i.postimg.cc/RZYGYhNL/avenue-815297.jpg" class="rounded float-end" alt="...">
@@ -54,5 +54,8 @@ p{
 }
 .btn-rounded {
     border-radius: 35px;
+}
+.btn-green-moon:hover{
+  color: #41493b;
 }
 </style>

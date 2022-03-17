@@ -6,6 +6,7 @@ import register from '../views/Register.vue'
 import cart from '../views/Favourites.vue'
 import profile from '../views/Profile.vue'
 import blogs from '../views/Blog.vue'
+import NotFound from '../views/NotFound.vue'
 
 const routes = [
   {
@@ -45,6 +46,11 @@ const routes = [
     path: '/blogs',
     name: 'blogs',
     component: blogs
+  },
+  {
+    path: '/:catchAll(.*)',
+    name: 'NotFound',
+    component: NotFound
   }
 ]
 
