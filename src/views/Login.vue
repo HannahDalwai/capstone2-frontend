@@ -59,7 +59,7 @@ export default {
 			// console.log(json);
           localStorage.setItem("jwt", json.jwt);
           alert("User logged in");
-           this.$router.push({ name: "products" });
+           this.$router.push({ name: "blogs" });
         })
         .catch((err) => {
 			console.log(err);

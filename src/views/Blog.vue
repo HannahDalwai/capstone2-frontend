@@ -50,7 +50,7 @@ export default {
   },
   mounted() {
     if (localStorage.getItem("jwt")) {
-      fetch("https://generic-blog-api.herokuapp.com/posts", {
+      fetch("https://blog-capstone-h.herokuapp.com/posts", {
         method: "GET",
         headers: {
           "Content-type": "application/json; charset=UTF-8",
@@ -62,7 +62,7 @@ export default {
           this.blogs = json;
           this.blogs.forEach(async (blog) => {
             await fetch(
-              "https://generic-blog-api.herokuapp.com/users/" + blog.author,
+              "https://blog-capstone-h.herokuapp.com/posts" + blog.author,
               {
                 method: "GET",
                 headers: {

@@ -3,7 +3,6 @@ import home from '../views/Home.vue'
 import about from '../views/About.vue'
 import login from '../views/Login.vue'
 import register from '../views/Register.vue'
-import cart from '../views/Favourites.vue'
 import profile from '../views/Profile.vue'
 import blogs from '../views/Blog.vue'
 import NotFound from '../views/NotFound.vue'
@@ -31,12 +30,6 @@ const routes = [
     name: 'register',
     component: register
   },
-  {
-    path: '/cart',
-    name: 'cart',
-    component: cart
-  }
-  ,
   {
     path: '/profile',
     name: 'profile',
