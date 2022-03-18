@@ -25,7 +25,7 @@
           </router-link>
         </li>
           <li class="nav-item">
-           <router-link :to="{name:'cart'}" class="nav-link"> Favourites</router-link>
+           <router-link :to="{name:'about'}" class="nav-link"> About Us</router-link>
         </li>
             <li class="nav-item">
            <router-link :to="{name:'blogs'}" class="nav-link"> Blogs</router-link>

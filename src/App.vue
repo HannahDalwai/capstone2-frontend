@@ -38,5 +38,6 @@ h1{
 }
 p{
   font-family: 'Open Sans', sans-serif;
+  line-height: 1.4;
 }
 </style>
