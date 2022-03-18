@@ -1,5 +1,5 @@
 <template>
-  <div class="blog-card">
+  <!-- <div class="blog-card">
     <div class="meta">
       <div class="photo" style="background-image: url(https://storage.googleapis.com/chydlx/codepen/blog-cards/image-1.jpg)"></div>
       <ul class="details">
@@ -23,37 +23,69 @@
         <a href="#">Read More</a>
       </p>
     </div>
-  </div>
-  <div class="blog-card alt">
-    <div class="meta">
-      <div class="photo" style="background-image: url(https://storage.googleapis.com/chydlx/codepen/blog-cards/image-2.jpg)"></div>
-      <ul class="details">
-        <li class="author"><a href="#">Jane Doe</a></li>
-        <li class="date">July. 15, 2015</li>
-        <li class="tags">
-          <ul>
-            <li><a href="#">Learn</a></li>
-            <li><a href="#">Code</a></li>
-            <li><a href="#">JavaScript</a></li>
-          </ul>
-        </li>
-      </ul>
-    </div>
-    <div class="description">
-      <h1>Mastering the Language</h1>
-      <h2>Java is not the same as JavaScript</h2>
-      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad eum dolorum architecto obcaecati enim dicta praesentium, quam nobis! Neque ad aliquam facilis numquam. Veritatis, sit.</p>
-      <p class="read-more">
-        <a href="#">Read More</a>
-      </p>
+  </div> -->
+   <div v-if="blogs">
+    <h2>Blogs</h2>
+    <div class="blogs-container" v-if="blogs">
+      <router-link
+        v-for="blog of blogs"
+        :key="blog._id"
+        :to="{ name: 'BlogDetails', params: { id: blog._id } }"
+      >
+        <img :src="blog.img" :alt="blog.title" />
+        {{ blog.author_name }}
+      </router-link>
     </div>
   </div>
+  <div v-else>Loading blogs...</div>
 </template>
 
 <script>
-export default {
 
-}
+export default {
+ data() {
+    return {
+      blogs: null,
+    };
+  },
+  mounted() {
+    if (localStorage.getItem("jwt")) {
+      fetch("https://generic-blog-api.herokuapp.com/posts", {
+        method: "GET",
+        headers: {
+          "Content-type": "application/json; charset=UTF-8",
+          Authorization: `Bearer ${localStorage.getItem("jwt")}`,
+        },
+      })
+        .then((response) => response.json())
+        .then((json) => {
+          this.blogs = json;
+          this.blogs.forEach(async (blog) => {
+            await fetch(
+              "https://generic-blog-api.herokuapp.com/users/" + blog.author,
+              {
+                method: "GET",
+                headers: {
+                  "Content-type": "application/json; charset=UTF-8",
+                  Authorization: `Bearer ${localStorage.getItem("jwt")}`,
+                },
+              }
+            )
+              .then((response) => response.json())
+              .then((json) => {
+                blog.author_name = json.name;
+              });
+          });
+        })
+        .catch((err) => {
+          alert("User not logged in");
+        });
+    } else {
+      alert("User not logged in");
+      this.$router.push({ name: "Login" });
+    }
+  },
+};
 </script>
 
 <style scoped>

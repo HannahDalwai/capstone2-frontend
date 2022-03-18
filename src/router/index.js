@@ -7,6 +7,7 @@ import cart from '../views/Favourites.vue'
 import profile from '../views/Profile.vue'
 import blogs from '../views/Blog.vue'
 import NotFound from '../views/NotFound.vue'
+import CreateBlog from '../views/CreateBlog.vue'
 
 const routes = [
   {
@@ -46,6 +47,12 @@ const routes = [
     path: '/blogs',
     name: 'blogs',
     component: blogs
+  }
+  ,
+  {
+    path: '/create',
+    name: 'createblog',
+    component:CreateBlog
   },
   {
     path: '/:catchAll(.*)',
