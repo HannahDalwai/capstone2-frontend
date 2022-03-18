@@ -43,7 +43,7 @@ export default {
   methods: {
     login() {
 		console.log(this.email, this.password);
-      fetch("https://pointonsalebackend.herokuapp.com/users/login", {
+      fetch("https://blog-capstone-h.herokuapp.com/users", {
         method: "POST",
 		// mode: 'no-cors',
         body: JSON.stringify({

@@ -2,7 +2,7 @@
 
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <div class="container-fluid">
-   <router-link :to="{name:'home'}" class="navbar-brand">Say Hi <h5 class="cursor message">to a happier you</h5></router-link>
+   <router-link :to="{name:'home'}" class="navbar-brand">Wellness Kit</router-link>
       <div class="navbar-nav mr-auto">
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
@@ -97,30 +97,4 @@ export default {
   position: relative;
 }
 
-
-.message {
-  animation: typeMsg 3s steps(31, end), cursorAnim 1s steps(40) infinite normal;
-}
-@keyframes typeMsg {
-  from {
-    width: 0;
-  }
-  to {
-    width: 100%;
-  }
-}
-@keyframes cursorAnim {
-  from {
-    border-right-color: #000;
-  }
-  to {
-    border-right-color: transparent;
-  }
-}
-.cursor {
-  border-right: 2px solid #000;
-  white-space: nowrap;
-  overflow: hidden;
-  max-width: max-content;
-}
 </style>

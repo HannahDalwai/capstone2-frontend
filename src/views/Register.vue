@@ -50,7 +50,7 @@ export default {
   methods: {
     register() {
 		console.log(this.fullname, this.email, this.phone_number, this.password)
-      fetch("https://pointonsalebackend.herokuapp.com/users", {
+      fetch("https://blog-capstone-h.herokuapp.com/users", {
         method: "POST",
 		// mode: 'no-cors',
         body: JSON.stringify({

@@ -1,5 +1,5 @@
 import axios from 'axios';
-const API_URL = 'https://pointonsalebackend.herokuapp.com/';
+const API_URL = 'https://blog-capstone-h.herokuapp.com';
 export default {
   login(user) {
     return axios
