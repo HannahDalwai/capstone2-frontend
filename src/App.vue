@@ -18,6 +18,8 @@ export default {
 }
 </script>
 <style>
+@import url('https://fonts.googleapis.com/css2?family=Lobster&family=Open+Sans:wght@300&display=swap');
+
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -26,7 +28,15 @@ export default {
   color: #2c3e50;
   /* background-color: #eee; */
 }
+
 .error-feedback{
   color: rgb(161, 38, 38);
+}
+
+h1{
+  font-family: 'Lobster', cursive;
+}
+p{
+  font-family: 'Open Sans', sans-serif;
 }
 </style>

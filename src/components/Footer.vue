@@ -46,7 +46,7 @@ export default {
 }
 </script>
 
-<style>
+<style scoped>
 
 
 .text-small {
@@ -64,17 +64,26 @@ a:hover, a:focus {
 }
 
 .form-control {
-  background: #41493b;
-  border-color: #a4ae9d;
+  background: #a4ae9d;
+  border-color: #41493b;
 }
 
 .form-control:focus {
-  background: #41493b;
+  background: #a4ae9d;
 }
 
 footer {
-  background: #41493b;
+  background: #495057;;
   margin-top: 10%;
+}
+button{
+  background-color:#56ab2f ;
+  color: white;
+  
+}
+button:hover{
+  color: #41493b;
+  background-color: white;
 }
 
 </style>
