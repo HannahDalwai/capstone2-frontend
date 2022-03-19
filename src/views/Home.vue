@@ -6,7 +6,11 @@
     <div class="col">
      <h1 class="display-6"><strong>Your journey begins here</strong></h1>
      <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quaerat reprehenderit minus molestiae velit provident atque adipisci cumque assumenda saepe, rerum fugit reiciendis labore necessitatibus recusandae. Repudiandae sint quidem blanditiis accusantium.</p>
-		    <button class="col btn btn-green-moon btn-rounded">Start your Journey</button>
+		     <button class="col btn btn-green-moon btn-rounded"> 
+          <router-link :to="{name :'register'}"> 
+             Start your journey
+          </router-link>
+         </button>
     </div>
     <div class="col">
     <img src="https://i.postimg.cc/RZYGYhNL/avenue-815297.jpg" class="rounded float-end" alt="...">

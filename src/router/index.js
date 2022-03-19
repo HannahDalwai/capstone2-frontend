@@ -4,7 +4,8 @@ import about from '../views/About.vue'
 import login from '../views/Login.vue'
 import register from '../views/Register.vue'
 import profile from '../views/Profile.vue'
-import blogs from '../views/Blog.vue'
+import blog from '../views/Blog.vue'
+import BlogDetails from '../views/BlogDetails.vue'
 import NotFound from '../views/NotFound.vue'
 import CreateBlog from '../views/CreateBlog.vue'
 
@@ -38,8 +39,14 @@ const routes = [
   ,
   {
     path: '/blogs',
-    name: 'blogs',
-    component: blogs
+    name: 'blog',
+    component: blog
+  }
+  ,
+  {
+    path: '/blog',
+    name: 'BlogDetails',
+    component: BlogDetails
   }
   ,
   {

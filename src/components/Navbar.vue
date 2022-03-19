@@ -14,37 +14,25 @@
             <font-awesome-icon icon="home" /> Home
           </router-link>
         </li>
-        <li class="nav-item">
-           <router-link :to="{name :'register'}" class="nav-link">
-            <font-awesome-icon icon="user-plus" /> Register
-          </router-link>
-        </li>
-        <li class="nav-item">
-        <router-link :to="{name:'login'}" class="nav-link">
-            <font-awesome-icon icon="sign-in-alt" /> Login
-          </router-link>
-        </li>
           <li class="nav-item">
            <router-link :to="{name:'about'}" class="nav-link"> About Us</router-link>
         </li>
             <li class="nav-item">
-           <router-link :to="{name:'blogs'}" class="nav-link"> Blogs</router-link>
+           <router-link :to="{name:'blog'}" class="nav-link"> Blogs</router-link>
         </li>
         <li class="nav-item">
         <router-link class="but nav-link" to="/Login"><i class='bx bx-log-out-circle'></i></router-link>
         </li>
+         <li class="nav-item">
+                 <router-link :to="{name:'blog'}" class="nav-link"> {{currentUser.name}}</router-link>
+
+        </li>
       </ul>
        </div>
-        <div v-if="currentUser" class="navbar-nav ml-auto">
-          <li class="nav-item">
-          <router-link :to="{name:'profile'}" class="nav-link">
-            <font-awesome-icon icon="user" />
-            {{ currentUser.username }}
-          </router-link>
-        </li>
+ 
+         
        
-        
-        </div>
+     
     </div>
   </div>
 </nav>

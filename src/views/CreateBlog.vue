@@ -56,7 +56,7 @@ export default {
         .then((response) => response.json())
         .then((json) => {
           alert("Post Created");
-          this.$router.push({ name: "Blogs" });
+          this.$router.push({ name: "Blog" });
         })
         .catch((err) => {
           alert(err);

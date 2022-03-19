@@ -24,20 +24,27 @@
       </p>
     </div>
   </div> -->
-   <div v-if="blogs">
+   <div v-if="posts">
     <h2>Blogs</h2>
-    <div class="blogs-container" v-if="blogs">
+    <div class="posts-container" v-if="posts">
       <router-link
-        v-for="blog of blogs"
-        :key="blog._id"
-        :to="{ name: 'BlogDetails', params: { id: blog._id } }"
-      >
-        <img :src="blog.img" :alt="blog.title" />
-        {{ blog.author_name }}
+        v-for="post of posts"
+        :key="post._id"
+        :to="{ name: 'BlogDetails', params: { id: post._id } }">
+        <img :src="post.img" :alt="post.title" />
+        {{ post.author_name }}
       </router-link>
     </div>
   </div>
-  <div v-else>Loading blogs...</div>
+  <div v-else>Loading blogs... 
+    <div class="flower-spinner">
+      <div class="dots-container">
+        <div class="bigger-dot">
+          <div class="smaller-dot"></div>
+        </div>
+      </div>
+    </div>  
+ </div>
 </template>
 
 <script>
@@ -45,7 +52,7 @@
 export default {
  data() {
     return {
-      blogs: null,
+      posts: null,
     };
   },
   mounted() {
@@ -59,10 +66,10 @@ export default {
       })
         .then((response) => response.json())
         .then((json) => {
-          this.blogs = json;
-          this.blogs.forEach(async (blog) => {
+          this.posts = json;
+          this.posts.forEach(async (post) => {
             await fetch(
-              "https://blog-capstone-h.herokuapp.com/posts" + blog.author,
+              "https://blog-capstone-h.herokuapp.com/posts" + post.author,
               {
                 method: "GET",
                 headers: {
@@ -73,13 +80,10 @@ export default {
             )
               .then((response) => response.json())
               .then((json) => {
-                blog.author_name = json.name;
+                post.author_name = json.name;
               });
           });
         })
-        .catch((err) => {
-          alert("User not logged in");
-        });
     } else {
       alert("User not logged in");
       this.$router.push({ name: "Login" });
@@ -89,6 +93,118 @@ export default {
 </script>
 
 <style scoped>
+.flower-spinner,  .flower-spinner * {
+      box-sizing: border-box;
+    }
+
+    .flower-spinner {
+      height: 70px;
+      width: 70px;
+      display: flex;
+      flex-direction: row;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .flower-spinner .dots-container {
+      height: calc(70px / 7);
+      width: calc(70px / 7);
+    }
+
+    .flower-spinner .smaller-dot {
+      background: #ff1d5e;
+      height: 100%;
+      width: 100%;
+      border-radius: 50%;
+      animation: flower-spinner-smaller-dot-animation 2.5s 0s infinite both;
+
+    }
+
+    .flower-spinner .bigger-dot {
+      background: #ff1d5e;
+      height: 100%;
+      width: 100%;
+      padding: 10%;
+      border-radius: 50%;
+      animation: flower-spinner-bigger-dot-animation 2.5s 0s infinite both;
+    }
+
+    @keyframes flower-spinner-bigger-dot-animation {
+      0%, 100% {
+        box-shadow: rgb(255, 29, 94) 0px 0px 0px,
+        rgb(255, 29, 94) 0px 0px 0px,
+        rgb(255, 29, 94) 0px 0px 0px,
+        rgb(255, 29, 94) 0px 0px 0px,
+        rgb(255, 29, 94) 0px 0px 0px,
+        rgb(255, 29, 94) 0px 0px 0px,
+        rgb(255, 29, 94) 0px 0px 0px,
+        rgb(255, 29, 94) 0px 0px 0px;
+      }
+
+      50% {
+        transform: rotate(180deg);
+      }
+
+      25%, 75% {
+        box-shadow: rgb(255, 29, 94) 26px 0px 0px,
+        rgb(255, 29, 94) -26px 0px 0px,
+        rgb(255, 29, 94) 0px 26px 0px,
+        rgb(255, 29, 94) 0px -26px 0px,
+        rgb(255, 29, 94) 19px -19px 0px,
+        rgb(255, 29, 94) 19px 19px 0px,
+        rgb(255, 29, 94) -19px -19px 0px,
+        rgb(255, 29, 94) -19px 19px 0px;
+      }
+
+      100% {
+        transform: rotate(360deg);
+        box-shadow: rgb(255, 29, 94) 0px 0px 0px,
+        rgb(255, 29, 94) 0px 0px 0px,
+        rgb(255, 29, 94) 0px 0px 0px,
+        rgb(255, 29, 94) 0px 0px 0px,
+        rgb(255, 29, 94) 0px 0px 0px,
+        rgb(255, 29, 94) 0px 0px 0px,
+        rgb(255, 29, 94) 0px 0px 0px,
+        rgb(255, 29, 94) 0px 0px 0px;
+      }
+    }
+
+    @keyframes flower-spinner-smaller-dot-animation {
+      0%, 100% {
+        box-shadow: rgb(255, 29, 94) 0px 0px 0px,
+        rgb(255, 29, 94) 0px 0px 0px,
+        rgb(255, 29, 94) 0px 0px 0px,
+        rgb(255, 29, 94) 0px 0px 0px,
+        rgb(255, 29, 94) 0px 0px 0px,
+        rgb(255, 29, 94) 0px 0px 0px,
+        rgb(255, 29, 94) 0px 0px 0px,
+        rgb(255, 29, 94) 0px 0px 0px;
+      }
+
+      25%, 75% {
+        box-shadow: rgb(255, 29, 94) 14px 0px 0px,
+        rgb(255, 29, 94) -14px 0px 0px,
+        rgb(255, 29, 94) 0px 14px 0px,
+        rgb(255, 29, 94) 0px -14px 0px,
+        rgb(255, 29, 94) 10px -10px 0px,
+        rgb(255, 29, 94) 10px 10px 0px,
+        rgb(255, 29, 94) -10px -10px 0px,
+        rgb(255, 29, 94) -10px 10px 0px;
+      }
+
+      100% {
+        box-shadow: rgb(255, 29, 94) 0px 0px 0px,
+        rgb(255, 29, 94) 0px 0px 0px,
+        rgb(255, 29, 94) 0px 0px 0px,
+        rgb(255, 29, 94) 0px 0px 0px,
+        rgb(255, 29, 94) 0px 0px 0px,
+        rgb(255, 29, 94) 0px 0px 0px,
+        rgb(255, 29, 94) 0px 0px 0px,
+        rgb(255, 29, 94) 0px 0px 0px;
+      }
+    }
+
+
 * {
   box-sizing: border-box;
 }
