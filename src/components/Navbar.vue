@@ -20,12 +20,12 @@
             <li class="nav-item">
            <router-link :to="{name:'blog'}" class="nav-link"> Blogs</router-link>
         </li>
-        <li class="nav-item">
-        <router-link class="but nav-link" to="/Login"><i class='bx bx-log-out-circle'></i></router-link>
-        </li>
          <li class="nav-item">
-                 <router-link :to="{name:'blog'}" class="nav-link"> {{currentUser.name}}</router-link>
+                 <router-link :to="{name:'profile'}" class="nav-link">Profile</router-link>
 
+        </li>
+        <li class="nav-item">
+        <router-link  class="but nav-link" to="/Login"><i class='bx bx-log-out-circle'></i></router-link>
         </li>
       </ul>
        </div>
@@ -52,7 +52,11 @@ export default {
     logOut() {
       this.$store.dispatch('auth/logout');
       this.$router.push({name:'login'});
-    }
+    },
+    // confirm(){
+    //   confirm("Are you sure you want to logout?");
+    //   this.$router.push({ name: "home" });
+    // }
   }
 };
 </script>
@@ -84,5 +88,8 @@ export default {
   padding: 15px 20px;
   position: relative;
 }
+.navbar-brand:hover{
+color:#56ab2f
 
+}
 </style>

@@ -58,8 +58,14 @@ p{
 }
 .btn-rounded {
     border-radius: 35px;
+    text-decoration: none;
+    color: white;
 }
 .btn-green-moon:hover{
   color: #41493b;
+}
+button{
+  text-decoration: none;
+    color: white;
 }
 </style>

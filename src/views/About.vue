@@ -21,7 +21,7 @@
  <img src="https://i.postimg.cc/pLHvHbRn/pexels-steve-johnson-1843717.jpg" alt="">
     </div>
     <div class="col">
-     <img src="https://i.postimg.cc/3wTF1WKc/aloe-3986306.jpg" alt="">
+     <img src="https://i.postimg.cc/02DJbYwJ/gemma-chua-tran-Ftvf4-Vb-Vb-DE-unsplash.jpg" alt="">
     </div>
     <div class="col">
     <img src="https://i.postimg.cc/pLHvHbRn/pexels-steve-johnson-1843717.jpg" alt="">
@@ -35,7 +35,7 @@
      <img src="https://i.postimg.cc/pLHvHbRn/pexels-steve-johnson-1843717.jpg" alt="">
     </div>
     <div class="col">
-    <img src="https://i.postimg.cc/3wTF1WKc/aloe-3986306.jpg" alt="">
+    <img src="https://i.postimg.cc/tJHpfxCL/coconut-3221935.jpg" alt="">
     </div>
   </div>
   </div>
