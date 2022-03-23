@@ -5,6 +5,7 @@
 
  <div v-if="posts"> 
   <h2>Blogs</h2>
+  <p>{{posts.length}} posts found</p>
     <div class="posts-container" v-if="posts">
       <div v-for="post of posts" :key="post._id" >
 
@@ -71,6 +72,9 @@ body {
   font-family: "Merriweather", serif;
   font-size: 16px;
   color: #777;
+}
+.posts-container{
+  margin-left: 30%;
 }
 
 h1, h4 {
@@ -208,6 +212,11 @@ h1, h4 {
   }
 }
 
+@media only screen and (max-width: 746px) {
+ .posts-container{
+   margin-left: 7%;
+  }
+}
 
 
 </style>

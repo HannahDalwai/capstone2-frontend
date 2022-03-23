@@ -1,5 +1,5 @@
 <template>
-   <div v-if="filteredBlog">
+   
     <div class="sortBar">
       <label>
         Sort Date:
@@ -25,16 +25,16 @@
       </label>
     </div>
     <div id="user-list">
-      <Card
+      <!-- <Card
         v-for="(blog, idx) of filteredBlog"
         :key="idx"
         :blog="blog"
         :idx="idx"
-      />
+      /> -->
     </div>
-  </div>
-  <div v-else>loading search
-      </div>
+  
+  <!-- <div v-else>loading search
+      </div> -->
 
 </template>
 
