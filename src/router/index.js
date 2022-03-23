@@ -44,9 +44,10 @@ const routes = [
   }
   ,
   {
-    path: '/blog',
+    path: '/blog/:id',
     name: 'BlogDetails',
-    component: BlogDetails
+    component: BlogDetails,
+    props: true
   }
   ,
   {

@@ -24,6 +24,10 @@
 				<span v-show="loading" class="spinner-border spinner-border-sm"></span>
                 <span>Sign Up</span></button>
 		       <i class="button__icon fas fa-chevron-right"></i>
+
+			   <button>
+				 <router-link  class="but nav-link" to="/Login">Login in</router-link>
+               </button>
 	
   </form>
   	</div>

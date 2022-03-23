@@ -1,22 +1,24 @@
 <template>
   <div v-if="post">
+   <p>post</p> 
     <div class="blog">
       <img class="blog-image neu-border" :src="post.img" :alt="post.title" />
       <div class="blog-details">
         <h2>{{ post.title }}</h2>
         <h4>{{ post.author_name }} - {{ post.date }}</h4>
-        <p>{{ post.body }}</p>
+        <p>{{ post.description }}</p>
+        <p>{{ post.category }}</p>
       </div>
     </div>
   </div>
-  <div v-else>Loading the blog...
-     <div class="flower-spinner">
+  <div v-else>Loading the blog details...
+     <!-- <div class="flower-spinner">
       <div class="dots-container">
         <div class="bigger-dot">
           <div class="smaller-dot"></div>
         </div>
       </div>
-    </div>
+    </div> -->
   </div>
 </template>
 <script>
@@ -28,7 +30,7 @@ export default {
     };
   },
   mounted() {
-    fetch("https://generic-blog-api.herokuapp.com/posts/" + this.id, {
+    fetch("https://blog-capstone-h.herokuapp.com/posts/" + this.id, {
       method: "GET",
       headers: {
         "Content-type": "application/json; charset=UTF-8",
@@ -39,7 +41,7 @@ export default {
       .then(async (json) => {
         this.post = json;
         await fetch(
-          "https://generic-blog-api.herokuapp.com/users/" + json.author,
+          "https://blog-capstone-h.herokuapp.com/users" + json.author,
           {
             method: "GET",
             headers: {

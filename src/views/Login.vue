@@ -18,7 +18,11 @@
 	<span v-show="loading" class="spinner-border spinner-border-sm"></span>
     <span>Log In</span></button>
 
-   
+   <button>
+	    <router-link :to="{name :'register'}"> 
+             sign up
+          </router-link>
+   </button>
     </form>
   </div>
         <div class="screen__background">

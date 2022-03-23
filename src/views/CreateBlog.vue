@@ -15,13 +15,28 @@
       placeholder="Blog Image"
       required
     />
+      <input
+      class="form-input neu-border-inset"
+      type="text"
+      v-model="category"
+      placeholder="category"
+      required
+    />
+      <input
+      class="form-input neu-border-inset"
+      type="text"
+      v-model="date"
+      placeholder="author"
+      required
+    />
     <textarea
       class="form-input neu-border-inset"
       type="text"
-      v-model="body"
+      v-model="description"
       placeholder="Body"
       required
     ></textarea>
+
 
     <button type="submit" class="form-btn neu-border">Create Blog</button>
   </form>
@@ -31,22 +46,28 @@ export default {
   data() {
     return {
       title: "",
-      body: "",
+      description: "",
       img: "",
-    };
+      category:"",
+      date :"",
+      author:""
+    }
   },
-  methods: {
+
+methods: {
     createBlog() {
       if (!localStorage.getItem("jwt")) {
         alert("User not logged in");
         return this.$router.push({ name: "Login" });
       }
-      fetch("https://generic-blog-api.herokuapp.com/posts", {
+      fetch("https://blog-capstone-h.herokuapp.com/posts", {
         method: "POST",
         body: JSON.stringify({
           title: this.title,
-          body: this.body,
+          description: this.description,
           img: this.img,
+          category: this.category,
+          author: this.author,
         }),
         headers: {
           "Content-type": "application/json; charset=UTF-8",
@@ -56,7 +77,7 @@ export default {
         .then((response) => response.json())
         .then((json) => {
           alert("Post Created");
-          this.$router.push({ name: "Blog" });
+          this.$router.push({ name: "blog" });
         })
         .catch((err) => {
           alert(err);
