@@ -1,15 +1,42 @@
 <template>
 
-<Search/>
+
 
 
 <div v-if="posts">
 
+
+    
+
+
+
+<div class="latest"> 
+  
+  
   <div>{{posts[posts.length-1].title}}</div>
+  <img :src="posts[posts.length-1].img" alt="">
+
+  <div>{{posts[posts.length-2].title}}</div>
+  <img :src="posts[posts.length-2].img" alt="">
+  </div>
+ 
+
+
+
 
 
   <h2>Blogs</h2>
   <p>{{posts.length}} posts found</p>
+    <label>
+        Sort Title:
+        <select v-model="title" @change="sortTitle(title)">
+            <option value="">All</option>
+          <option value="asc">Ascending</option>
+          <option value="desc">Descending</option>
+        </select>
+      </label>
+      <input type="text"  placeholder="search" v-model="search">
+
     <div class="posts-container" v-if="posts">
 
       <div v-for="post of posts" :key="post._id" >
@@ -45,23 +72,53 @@
 </template>
 
 <script>
-import Search from '../components/Search.vue'
 import Loader from '../components/Loader.vue'
 
 export default {
-  components: { Search, Loader },
+  props:["post","idx"],
+  components: { Loader },
  data() {
     return {
       posts: null,
+      filteredBlogs: null,
+      title: "",
+      search: "",
     };
   },
   mounted() {
     fetch("https://blog-capstone-h.herokuapp.com/posts")
         .then(res => res.json())
-        .then(data => this.posts= data)
+        // .then(data => this.posts= data)
+        // this.filteredBlogs = data
+    .then((data)=>{
+      this.posts = data;
+      this.filteredBlogs = data
+    })
         .catch(err => console.log(err.message))
+
   },
-   
+   methods: {
+    sortTitle(dir) {
+      this.filteredBlogs = this.filteredBlogs.sort((a, b) => {
+        if (a.title < b.title) {
+          return -1;
+        }
+        if (a.title > b.title) {
+          return 1;
+        }
+        return 0;
+      });
+      if (dir == "desc") this.filteredBlogs.reverse();
+    },
+   },
+computed: {
+    filteredServices: function () {
+      return this.services.filter((service) => {
+        return service.laundry_service.match(this.search);
+      });
+    },
+  },
+
 };
 </script>
 

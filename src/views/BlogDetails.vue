@@ -2,8 +2,17 @@
   <div v-if="post">
    <p>post</p> 
     <div class="blog">
-      <img class="blog-image neu-border" :src="post.img" :alt="post.title" />
-      <div class="blog-details">
+    
+   
+<!-- new -->
+<div class="container3">
+  <div class="row">
+    <div class="col-lg-6 ">
+            <img class="blog-image neu-border" :src="post.img" :alt="post.title" />
+
+    </div>
+    <div class="col-lg-6 ">
+        <div class="blog-details">
         <h2>{{ post.title }}</h2>
         <h4>{{ post.author_name }} - {{ post.date }}</h4>
         <p>{{ post.description }}</p>
@@ -11,12 +20,25 @@
       </div>
     </div>
   </div>
-  <div v-else>Loading the blog details...
+</div>
+ </div>
+
+  </div>
+<div v-else>
      <Loader/>
+
+
+
+
+
+  
   </div>
 </template>
 <script>
+import Loader from '../components/Loader.vue'
 export default {
+    components: { Loader },
+
   props: ["id"],
   data() {
     return {
@@ -54,4 +76,18 @@ export default {
 </script>
 <style scoped>
 
+
+
+
+@media (max-width: 600px) {
+
+  .col-s-12 {
+    width: 100%;
+  }
+  h2{
+    margin-top: 25px;
+  }
+  
+
+}
 </style>
