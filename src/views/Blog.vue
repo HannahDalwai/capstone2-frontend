@@ -3,10 +3,15 @@
 <Search/>
 
 
- <div v-if="posts"> 
+<div v-if="posts">
+
+  <div>{{posts[posts.length-1].title}}</div>
+
+
   <h2>Blogs</h2>
   <p>{{posts.length}} posts found</p>
     <div class="posts-container" v-if="posts">
+
       <div v-for="post of posts" :key="post._id" >
 
 <div class="container">
@@ -17,8 +22,6 @@
         <div class="seperator"></div>
         <p>{{post.description}}</p>
          <router-link class="read-more" :to="{ name: 'BlogDetails', params: { id: post._id } }" >Read more<i class="fa fa-long-arrow-right"></i></router-link>
-
-          
       </div>
       </div>
     </div>

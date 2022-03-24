@@ -1,4 +1,5 @@
 <template>
+<div class="contain">
      <footer class="w-100 py-4 flex-shrink-0">
         <div class="container py-4">
             <div class="row gy-4 gx-5">
@@ -38,6 +39,7 @@
             </div>
         </div>
     </footer>
+</div>
 </template>
 
 <script>
@@ -47,7 +49,14 @@ export default {
 </script>
 
 <style scoped>
-
+.contain{
+  position: absolute;
+  position: unset;
+  /* padding-bottom: -40%; */
+  /* position: fixed; */
+  /* bottom: 0; */
+  width: 100%;
+}
 
 .text-small {
   font-size: 0.9rem;
@@ -75,6 +84,7 @@ a:hover, a:focus {
 footer {
   background: #495057;;
   margin-top: 10%;
+  
 }
 button{
   background-color:#56ab2f ;

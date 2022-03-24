@@ -12,7 +12,7 @@
       class="form-input neu-border-inset"
       type="text"
       v-model="img"
-      placeholder="Blog Image"
+      placeholder="Image Url"
       required
     />
       <input
@@ -49,7 +49,6 @@ export default {
       description: "",
       img: "",
       category:"",
-      date :"",
       author:""
     }
   },
