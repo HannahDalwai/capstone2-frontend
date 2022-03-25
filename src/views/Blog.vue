@@ -39,7 +39,7 @@
       <div class="item-in">
         <h4>{{post.title}}</h4>
         <div class="seperator"></div>
-        <p>{{post.description}}</p>
+        <p>{{post.description.substring(0, 200)}}</p>
          <router-link class="read-more" :to="{ name: 'BlogDetails', params: { id: post._id } }" >Read more<i class="fa fa-long-arrow-right"></i></router-link>
       </div>
       </div>

@@ -15,13 +15,16 @@
       placeholder="Image Url"
       required
     />
-      <input
-      class="form-input neu-border-inset"
-      type="text"
-      v-model="category"
-      placeholder="category"
-      required
-    />
+      <select
+          class="form-select"
+          name="addCategory"
+          id="addCategory"
+          v-model="category"
+        >
+          <option value="skincare">skincare</option>
+          <option value="movement">movement</option>
+          <option value="feeling toolkit">Apple</option>
+        </select>
       <input
       class="form-input neu-border-inset"
       type="text"

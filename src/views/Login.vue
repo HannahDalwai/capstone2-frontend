@@ -57,9 +57,7 @@
     <span>Log In</span></button>
 
   
-   <p>Don't have an Account?<router-link :to="{name :'register'}"> 
-             sign up
-          </router-link> </p>
+   <p>Don't have an Account?<router-link :to="{name :'register'}"> sign up</router-link> </p>
     </form>
 		<ul class="colorlib-bubbles">
 			<li></li>
