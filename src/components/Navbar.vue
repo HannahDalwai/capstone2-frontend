@@ -96,7 +96,7 @@ color:#56ab2f
 #navbarSupportedContent{
   margin-right: 350px;
 }
-.navbar-toggler{
+/* .navbar-toggler{
   
-}
+} */
 </style>

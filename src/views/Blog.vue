@@ -12,14 +12,17 @@
 
 <div class="latest"> 
   
-  
+       <h1>Latest</h1>
   <div>{{posts[posts.length-1].title}}</div>
   <img :src="posts[posts.length-1].img" alt="">
 
   <div>{{posts[posts.length-2].title}}</div>
   <img :src="posts[posts.length-2].img" alt="">
+  
+   <div>{{posts[posts.length-3].title}}</div>
+  <img :src="posts[posts.length-3].img" alt="">
   </div>
- 
+
 
 
 
@@ -57,12 +60,10 @@
     </div>
     </div>
     <button>
-   <router-link  :to="{name:'createblog'}" class="nav-link"> Create blog</router-link>
+   <router-link  :to="{name:'admin'}" class="nav-link"> admin</router-link>
  </button>
     </div>
     
-
-  
   <div v-else>
     Loading blogs... 
     <Loader/>
@@ -83,6 +84,7 @@ export default {
       filteredBlogs: null,
       title: "",
       search: "",
+      
     };
   },
   mounted() {
