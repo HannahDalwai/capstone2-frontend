@@ -26,7 +26,7 @@ export default {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-background: rgb(65, 89, 65);
+background: rgb(115, 130, 115);
 }
 
 .error-feedback{

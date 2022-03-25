@@ -5,13 +5,7 @@
 
 <div v-if="posts" class="all">
 
-
-    
-
-
-
 <div class="latest"> 
-  
        <h1>Latest</h1>
   <div>{{posts[posts.length-1].title}}</div>
   <img :src="posts[posts.length-1].img" alt="">
@@ -23,12 +17,7 @@
   <img :src="posts[posts.length-3].img" alt="">
   </div>
 
-
-
-
-
-
-  <h2>Blogs</h2>
+           <h2>Blogs</h2>
   <p>{{posts.length}} posts found</p>
     <label>
         Sort Title:
@@ -55,7 +44,6 @@
       </div>
       </div>
     </div>
-   
     </div>
     </div>
     </div>
