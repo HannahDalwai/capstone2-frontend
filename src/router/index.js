@@ -8,6 +8,7 @@ import blog from '../views/Blog.vue'
 import BlogDetails from '../views/BlogDetails.vue'
 import NotFound from '../views/NotFound.vue'
 import Admin from '../views/Admin.vue'
+import CreateBlog from '../views/CreateBlog.vue'
 
 const routes = [
   {
@@ -54,6 +55,11 @@ const routes = [
     path: '/admin',
     name: 'admin',
     component:Admin
+  },
+  {
+    path: '/create',
+    name: 'CreateBlog',
+    component:CreateBlog
   },
   {
     path: '/:catchAll(.*)',
