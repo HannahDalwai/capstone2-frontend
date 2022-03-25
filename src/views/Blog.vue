@@ -3,7 +3,7 @@
 
 
 
-<div v-if="posts">
+<div v-if="posts" class="all">
 
 
     
@@ -39,7 +39,7 @@
 
     <div class="posts-container" v-if="posts">
 
-      <div v-for="post of posts" :key="post._id" >
+      <div v-for="post of filteredPosts" :key="post._id" >
 
 <div class="container">
   <div class="row">
@@ -112,9 +112,9 @@ export default {
     },
    },
 computed: {
-    filteredServices: function () {
-      return this.services.filter((service) => {
-        return service.laundry_service.match(this.search);
+    filteredPosts: function () {
+      return this.posts.filter((post) => {
+        return post.title.match(this.search);
       });
     },
   },
@@ -128,10 +128,13 @@ computed: {
 @import url(https://fonts.googleapis.com/css?family=Merriweather:400,300,700);
 @import url(https://fonts.googleapis.com/css?family=Montserrat:400,700);
 body {
-  background: #fbfbfb;
   font-family: "Merriweather", serif;
   font-size: 16px;
   color: #777;
+}
+.all{
+    background: rgb(65, 89, 65);
+
 }
 .posts-container{
   margin-left: 30%;

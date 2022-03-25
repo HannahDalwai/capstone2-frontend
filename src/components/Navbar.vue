@@ -66,13 +66,14 @@ export default {
   background: none repeat scroll 0 0 transparent;
   bottom: 0;
   content: "";
-  display: block;
+  /* display: inline-block; */
   height: 2px;
   left: 50%;
   position: absolute;
   background: #56ab2f;
   transition: width 0.3s ease 0s, left 0.3s ease 0s;
   width: 0;
+  
 }
 .nav-link:hover:after { 
   width: 100%; 
@@ -92,7 +93,10 @@ export default {
 color:#56ab2f
 
 }
-
-
-
+#navbarSupportedContent{
+  margin-right: 350px;
+}
+.navbar-toggler{
+  
+}
 </style>
