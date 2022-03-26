@@ -23,18 +23,18 @@
                         </div>
                     </div>
                     <div class="col-sm-6 col-xl-3">
-                          <label>
-        Sort Fullname:
-        <select v-model="fullname" @change="sortUsers(fullname)">
+         <label>
+        Sort Title:
+        <select v-model="title" @change="sortTitle(title)">
             <option value="">All</option>
           <option value="asc">Ascending</option>
           <option value="desc">Descending</option>
         </select>
-        <br> <br>
       </label>
-      <input type="text"  placeholder="search blogs" v-model="search">
-      <div v-for="user of filteredUsers" :key="user._id">
-                    </div> </div>
+      <br> <br>
+          <input type="text"  placeholder="search blogs" v-model="search">
+       </div>
+
     <div class="col-sm-6 col-xl-3">
     <label>
         Sort Fullname:
@@ -85,7 +85,6 @@ export default {
       users: null,
       filteredBlogs: null,
       title: "",
-      subtitle: "",
       search: "",
       fullname: "",
     };

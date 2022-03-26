@@ -3,12 +3,10 @@
     <header class="profile-header">
       <h2>Profile</h2>
     </header>
-    <div v-if="loading">
-      <div class="loading-container">
-        <Loader />
-      </div>
-    </div>
-    <div class="profile-container">
+     <button>
+   <router-link  :to="{name:'admin'}" class="nav-link"> admin</router-link>
+ </button>
+    <!-- <div class="profile-container">
       <div class="user-info shadow-sm">
         <div class="user-svg">
           <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
@@ -29,8 +27,8 @@
           <button
             type="button"
             class="update-profile-btn"
-            data-bs-toggle="modal"
-            data-bs-target="#updateUser"
+            data-bs-toggle="modal" -->
+            <!-- data-bs-target="#updateUser"
           >
             Update
           </button>
@@ -44,8 +42,8 @@
           </button>
         </div>
       </div>
-    </div>
-  </div>
+   </div> -->
+   </div> 
   <Footer />
 
   <!-- Update User Modal -->

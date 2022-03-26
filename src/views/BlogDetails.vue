@@ -5,7 +5,7 @@
   
   <div v-if="post">
 
-
+ 
 <section class="single-block-wrapper section-padding">
 	<div class="container">
 		<div class="row">
@@ -30,7 +30,6 @@
                 <i class="ti-quote-left mr-2"></i>{{ post.category }}<i class="ti-quote-right ml-2"></i>
             </blockquote>
             <p> {{ post.description }}</p>
-           >
         </div>
     </div>
 </div>
@@ -44,36 +43,30 @@
     <div class="row">
         <div class="col-lg-4 col-md-4 col-sm-6">
             <div class="post-block-wrapper mb-4 mb-lg-0">
-                <a href="blog-single.html">
-                    <img class="img-fluid" src="https://i.postimg.cc/NjqQnjfL/reading.jpg" alt="post-thumbnail">
-                </a>
+                 <img :src="posts[posts.length-6].img" alt="">
                 <div class="post-content mt-3">
                     <h5>
-                        <a href="blog-single.html">Intel’s new smart glasses actually look good</a>
+                     <div>{{posts[posts.length-6].title}}</div>
                     </h5>
                 </div>
             </div>
         </div>
         <div class="col-lg-4 col-md-4 col-sm-6">
             <div class="post-block-wrapper mb-4 mb-lg-0">
-                <a href="blog-single.html">
-                    <img class="img-fluid" src="https://i.postimg.cc/NjqQnjfL/reading.jpg" alt="post-thumbnail">
-                </a>
+                    <img :src="posts[posts.length-5].img" alt="">
                 <div class="post-content mt-3">
                     <h5>
-                        <a href="blog-single.html">Free Two-Hour Delivery From Whole Foods</a>
+                     <div>{{posts[posts.length-5].title}}</div>
                     </h5>
                 </div>
             </div>
         </div>
         <div class="col-lg-4 col-md-4 col-sm-6">
             <div class="post-block-wrapper">
-                <a href="blog-single.html">
-                    <img class="img-fluid" src="https://i.postimg.cc/NjqQnjfL/reading.jpg" alt="post-thumbnail">
-                </a>
+                 <img :src="posts[posts.length-4].img" alt="">
                 <div class="post-content mt-3">
                     <h5>
-                        <a href="blog-single.html">Snow and Freezing Rain in Paris Forces the</a>
+                     <div>{{posts[posts.length-4].title}}</div>
                     </h5>
                 </div>
             </div>
@@ -108,10 +101,10 @@
 					<div class="sidebar-wrap mt-5 mt-lg-0">
 	<div class="sidebar-widget about mb-5 text-center p-3">
 		<div class="about-author">
-			<img src="https://i.postimg.cc/jdg3sPqC/default-profile.jpg" alt="" class="img-fluid">
+			<img id="author" src="https://i.postimg.cc/jdg3sPqC/default-profile.jpg" alt="" class="img-fluid">
 		</div>
-		<h4 class="mb-0 mt-4">Author</h4>
-		<p>idk</p>
+		<h4 class="mb-0 mt-4">{{post.author}}</h4>
+		<p>Blogger</p>
 		<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil a dicta perferendis cupiditate cumque nesciunt doloremque suscipit sequi recusandae, quia consectetur debitis. Quasi, et! In non maiores, voluptates corrupti dolores corporis, unde ullam vero dolor iusto, deserunt voluptate inventore dicta. In vitae officiis cum error.</p>
         <div class="sidebar-widget follow mb-5 text-center">
 		<h4 class="text-center widget-title">Follow Me</h4>
@@ -194,6 +187,18 @@ export default {
     };
   },
   mounted() {
+    fetch("https://blog-capstone-h.herokuapp.com/posts")
+        .then(res => res.json())
+        // .then(data => this.posts= data)
+        // this.filteredBlogs = data
+    .then((data)=>{
+      this.posts = data;
+      this.filteredBlogs = data
+    })
+        .catch(err => console.log(err.message))
+
+
+    
     fetch("https://blog-capstone-h.herokuapp.com/posts/" + this.id, {
       method: "GET",
       headers: {
@@ -234,5 +239,9 @@ export default {
     
     background-color: rgb(157, 157, 211);
     color: white;
+}
+#author{
+  clip-path: circle(50% at 50% 50%);
+
 }
 </style>

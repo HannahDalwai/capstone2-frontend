@@ -5,7 +5,6 @@ import login from '../views/Login.vue'
 import register from '../views/Register.vue'
 import profile from '../views/Profile.vue'
 import blog from '../views/Blog.vue'
-import BlogsTester from '../views/BlogsTester.vue'
 import BlogDetails from '../views/BlogDetails.vue'
 
 import NotFound from '../views/NotFound.vue'
@@ -45,12 +44,7 @@ const routes = [
     path: '/blogs',
     name: 'blog',
     component: blog
-  } ,
-  {
-    path: '/BlogsTester',
-    name: 'BlogsTester',
-    component: BlogsTester
-  }
+  } 
   ,
   {
     path: '/blog/:id',
