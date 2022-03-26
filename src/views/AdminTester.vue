@@ -85,9 +85,9 @@ export default {
       users: null,
       filteredBlogs: null,
       title: "",
+      subtitle: "",
       search: "",
       fullname: "",
-      
     };
   },
   mounted() {
@@ -176,3 +176,6 @@ computed: {
 
 };
 </script>
+<style scoped>
+
+</style>

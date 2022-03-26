@@ -5,7 +5,14 @@
       class="form-input neu-border-inset"
       type="text"
       v-model="title"
-      placeholder="Title"
+      placeholder="Heading"
+      required
+    />
+    <input
+      class="form-input neu-border-inset"
+      type="text"
+      v-model="subtitle"
+      placeholder="Sub-Heading"
       required
     />
     <input
@@ -49,6 +56,7 @@ export default {
   data() {
     return {
       title: "",
+      subtitle: "",
       description: "",
       img: "",
       category:"",
@@ -65,6 +73,7 @@ methods: {
         method: "POST",
         body: JSON.stringify({
           title: this.title,
+          subtitle: this.subtitle,
           description: this.description,
           img: this.img,
           category: this.category,

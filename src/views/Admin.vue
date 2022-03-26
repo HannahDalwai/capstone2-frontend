@@ -200,7 +200,7 @@ computed: {
 };
 </script>
 
-<style>
+<style scoped>
 .user{
   background: white;
   padding: 5px;
@@ -214,9 +214,9 @@ computed: {
 @import url(https://fonts.googleapis.com/css?family=Montserrat:400,700);
 
 
-.posts-container{
+/* .posts-container{
   margin-left: 30%;
-}
+} */
 
 h1, h4 {
   font-family: "Montserrat", sans-serif;
