@@ -22,7 +22,9 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-sm-6 col-xl-3">
+
+<!-- sort and search -->
+<div class="col-sm-6 col-xl-3">
          <label>
         Sort Title:
         <select v-model="title" @change="sortTitle(title)">
@@ -49,21 +51,18 @@
 <div v-for="user of filteredUsers" :key="user._id">
                     </div>
                 </div>
-           
-<!-- sort and search -->
- 
-
 
 
  <h1>users</h1>
 <!-- users table -->
 <table >
-  <tr>
+  <tr class="table-header">
     <th>user</th>
     <th>email</th>
     <th>contact</th>
     <th>member since</th>
     <th>actions</th>
+    <th></th>
     
 
   </tr>
@@ -104,33 +103,34 @@
 <!-- blogs table -->
 
 <table >
-  <tr>
+  <tr class="table-header">
     <th>title</th>
     <th>category</th>
     <th>description</th>
     <th>img url</th>
     <th>actions</th>
+    <th></th>
     
 
   </tr>
-    <tr -for="post of filteredPosts" :key="post._id" >
+    <tr v-for="post of filteredPosts" :key="post._id" >
       <td >
-         {{user.fullname}}
+         {{post.title}}
         </td>
       <td >
-        {{user.phone_number}}
+        {{post.category}}
       </td>
       <td >
-        {{user.email}}
+        {{post.img}}
       </td>
       <td >
-        {{user.join_date}}
+        {{post.description.substring(0,5)}}
       </td>
       <td >
         <button>edit</button>
       </td>
        <td >
-        <button>delete</button>
+         <button @click="deletePost(post._id)" class="btn btn-danger me-3">Delete</button>
       </td>
      
       <!-- <td >
@@ -343,41 +343,6 @@ a {
    text-decoration: none;
 }
 
-nav {
-   padding-left: 20px;
-   padding-right: 20px;
-   border-bottom: 1px solid #E9E9E9;
-}
-nav ul li {
-   display: inline-block;
-   font-weight: 600;
-   font-size: 16px;
-   text-transform: uppercase;
-}
-
-nav ul li {
-  text-align: center;
-  padding: 20px 16px;
-  text-decoration: none;
-}
-
-.talk {
-   text-transfor: uppercase;
-   font-size: 24px;
-}
-
-.active {
-   background-color: #F77160;
-   color: white;
-}
-
-.roleHead {
-   width: 115px;
-}
-
-.statusHead {
-   width: 115px;
-}
 
 i {
    float: right;
@@ -386,35 +351,11 @@ i {
    font-size: 12px;
 }
 
-td.activeUser:hover, td.suspendedUser:hover, td.bannedUser:hover, td.commenter, td.staff, td.admin, td.moderator {
-   cursor: pointer;
-}
-
 tr.table-header {
   border: 1px solid #BBBEBF;
 }
 
-.styled-select select {
-   background: transparent;
-   border: none;
-   font-size: 14px;
-   font-family: 'Source Sans Pro', sans-serif;
-   height: 29px;
-   padding: 5px; /* If you add too much padding here, the options won't show in IE */
-   width: 100%;
-}
 
-.styled-select {
-   margin-top: 5px;
-   width:200px;
-   border-radius: 2px;
-   border: 1px solid #9A9DA0;
-   color: #3B4A53;
-}
-
-.filter-ui, .search-ui {
-   display: inline-block;
-}
 
 input[type=text] {
   padding: 6px;
@@ -423,34 +364,6 @@ input[type=text] {
   width: 300px;
   border: 1px solid #9A9DA0;
   border-radius: 2px;
-}
-
-.search-container button {
-  padding: 10px 5px;
-  margin-right: 16px;
-  background: #ddd;
-  font-size: 17px;
-  border: none;
-  border-radius: 2px;
-  cursor: pointer;
-}
-
-
-::-webkit-input-placeholder {
-  color: #BBBEBF;
-  font-size: 13px;
-}
-::-moz-placeholder {
-  color: #BBBEBF;
-  font-size: 13px;
-}
-:-ms-input-placeholder {
-  color: #BBBEBF;
-  font-size: 13px;
-}
-::placeholder {
-  color: #BBBEBF;
-  font-size: 13px;
 }
 
 
