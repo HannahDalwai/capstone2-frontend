@@ -1,11 +1,42 @@
 <template>
+<div v-if="posts" class="all">
+<h3>Latest Blogs</h3>
+                <div class="row g-4">
+                    <div class="col-sm-6 col-xl-4 col-md-6">
+                        <div id="latest" class="bg-light rounded d-flex align-items-center justify-content-between p-4">
+                            <img :src="posts[posts.length-1].img" alt="">
+                            <div class="ms-6">
+                                <p class="mb-2">{{posts[posts.length-1].title}}</p>
+                                <h6 class="mb-0">{{posts[posts.length-1].category}}</h6>
+                            </div>
+                        </div>
+                    </div>
+                     <div class="col-sm-6 col-xl-4 col-md-6">
+                        <div id="latest" class="bg-light rounded d-flex align-items-center justify-content-between p-4">
+                            <img :src="posts[posts.length-2].img" alt="">
+                            <div class="ms-6">
+                                <p class="mb-2">{{posts[posts.length-2].title}}</p>
+                                <h6 class="mb-0">{{posts[posts.length-2].category}}</h6>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-xl-4 col-md-6">
+                        <div id="latest" class="bg-light rounded d-flex align-items-center justify-content-between p-4">
+                            <img :src="posts[posts.length-3].img" alt="">
+                            <div class="ms-6">
+                                <p class="mb-2">{{posts[posts.length-3].title}}</p>
+                                <h6 class="mb-0">{{posts[posts.length-3].category}}</h6>
+                            </div>
+                        </div>
+                    </div>
 
 
 
-
-
-
-
+</div>
+</div>
+<div v-else>
+    <Loader/>
+</div>
 
 </template>
 
@@ -61,5 +92,14 @@ computed: {
 };
 </script>
 <style>
-
+.all{
+	margin-top: 10%;
+}
+img{
+	border-radius: 5%;
+	padding-right: 5px;
+}
+#latest{
+	height: 180px;
+}
 </style>
