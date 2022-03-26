@@ -23,7 +23,7 @@
         >
           <option value="skincare">skincare</option>
           <option value="movement">movement</option>
-          <option value="feeling toolkit">Apple</option>
+          <option value="feeling toolkit">feeling toolkit</option>
         </select>
       <input
       class="form-input neu-border-inset"
