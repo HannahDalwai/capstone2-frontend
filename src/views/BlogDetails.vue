@@ -14,7 +14,7 @@
     <div class="col-lg-6 ">
         <div class="blog-details">
         <h2>{{ post.title }}</h2>
-        <h4>{{ post.author_name }} - {{ post.date }}</h4>
+        <h4>{{ post.author }} - {{ post.date }}</h4>
         <p>{{ post.description }}</p>
         <p>{{ post.category }}</p>
       </div>

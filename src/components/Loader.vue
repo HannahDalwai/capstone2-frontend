@@ -28,6 +28,8 @@ export default {
       flex-direction: row;
       align-items: center;
       justify-content: center;
+      margin-left: 46%;
+      margin-top: 10%;
     }
 
     .flower-spinner .dots-container {

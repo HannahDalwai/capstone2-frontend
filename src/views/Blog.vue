@@ -33,18 +33,42 @@
 
       <div v-for="post of filteredPosts" :key="post._id" >
 
-<div class="container">
+<!-- <div class="container">
   <div class="row">
     <div class="col-md-6 item">
       <div class="item-in">
         <h4>{{post.title}}</h4>
         <div class="seperator"></div>
-        <p>{{post.description.substring(0, 200)}}</p>
+        <p>{{post.description.substring(0, 100)}}</p>
          <router-link class="read-more" :to="{ name: 'BlogDetails', params: { id: post._id } }" >Read more<i class="fa fa-long-arrow-right"></i></router-link>
+          <br>
+         <router-link class="read-more" :to="{ name: 'BlogDetailsTester', params: { id: post._id } }" >Testing<i class="fa fa-long-arrow-right"></i></router-link>
       </div>
       </div>
     </div>
-    </div>
+    </div> -->
+<div class="col-lg-4 col-md-6 col-sm-6">
+		<article class="post-grid mb-5 ">
+			<a class="post-thumb mb-4 d-block">
+				<img  :src="post.img" alt="" class="img-fluid w-100">
+			</a>
+
+			<div class="post-content-grid">
+				<div class="label-date">
+					<span class="day">{{ post.date }}</span>
+				</div>
+				<span class="cat-name text-color font-extra font-sm text-uppercase letter-spacing">{{ post.category }}</span>
+				<h3 class="post-title mt-1"><p >{{ post.title }}</p></h3>
+				<p>{{ post.description.substring(0, 100) }} </p>
+			</div>
+         <router-link class="read-more" :to="{ name: 'BlogDetails', params: { id: post._id } }" >Read more<i class="fa fa-long-arrow-right"></i></router-link>
+        <br>           
+         <router-link class="read-more" :to="{ name: 'BlogDetailsTester', params: { id: post._id } }" >Testing<i class="fa fa-long-arrow-right"></i></router-link>
+		</article>
+	</div>
+
+
+
     </div>
     </div>
     <button>
@@ -52,10 +76,37 @@
  </button>
     </div>
     
-  <div v-else>
+<div v-else>
     Loading blogs... 
     <Loader/>
  </div>
+
+
+	<!-- <div class="col-lg-4 col-md-6 col-sm-6">
+		<article class="post-grid mb-5 ">
+			<a class="post-thumb mb-4 d-block">
+				<img  :src="post.img" alt="" class="img-fluid w-100">
+			</a>
+
+			<div class="post-content-grid">
+				<div class="label-date">
+					<span class="day">15</span>
+					<span class="month text-uppercase">apr</span>
+				</div>
+				<span class="cat-name text-color font-extra font-sm text-uppercase letter-spacing">Travel</span>
+				<h3 class="post-title mt-1"><p >{{ post.title }}</p></h3>
+				<p>{{ post.description }} </p>
+			</div>
+		</article>
+	</div> -->
+
+
+
+
+
+
+
+  
 
 
 </template>
@@ -111,165 +162,3 @@ computed: {
 
 };
 </script>
-
-<style scoped>
-
-/* card */
-@import url(https://fonts.googleapis.com/css?family=Merriweather:400,300,700);
-@import url(https://fonts.googleapis.com/css?family=Montserrat:400,700);
-body {
-  font-family: "Merriweather", serif;
-  font-size: 16px;
-  color: #777;
-}
-.all{
-    background: rgb(65, 89, 65);
-
-}
-.posts-container{
-  margin-left: 30%;
-}
-
-h1, h4 {
-  font-family: "Montserrat", sans-serif;
-}
-
-.row {
-  padding: 50px 0;
-}
-
-.seperator {
-  margin-bottom: 30px;
-  width: 35px;
-  height: 3px;
-  background: #777;
-  border: none;
-}
-
-.title {
-  text-align: center;
-}
-.title .row {
-  padding: 50px 0 0;
-}
-.title h1 {
-  text-transform: uppercase;
-}
-.title .seperator {
-  margin-top: 0;
-  margin-left:50%;
-}
-
-.item {
-  position: relative;
-  margin-bottom: 30px;
-  min-height: 1px;
-  float: left;
-  /* -webkit-backface-visibility: hidden; */
-  -webkit-tap-highlight-color: transparent;
-  -webkit-touch-callout: none;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-}
-.item .item-in {
-  background: #fff;
-  padding: 40px;
-  position: relative;
-}
-.item .item-in:hover:before {
-  width: 100%;
-}
-.item .item-in::before {
-  content: "";
-  position: absolute;
-  bottom: 0px;
-  height: 2px;
-  width: 0%;
-  background: #333333;
-  right: 0px;
-  transition: width 0.4s;
-}
-
-.item h4 {
-  font-size: 18px;
-  margin-top: 25px;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-}
-.item p {
-  font-size: 12px;
-}
-.item a {
-  font-family: "Montserrat", sans-serif;
-  font-size: 12px;
-  text-transform: uppercase;
-  color: #666666;
-  margin-top: 10px;
-}
-.item a i {
-  opacity: 0;
-  padding-left: 0px;
-  transition: 0.4s;
-  font-size: 24px;
-  display: inline-block;
-  top: 5px;
-  position: relative;
-}
-.item a:hover {
-  text-decoration: none;
-}
-.item a:hover i {
-  padding-left: 10px;
-  opacity: 1;
-  font-weight: 300;
-}
-
-.item .icon {
-  position: absolute;
-  top: 27px;
-  left: -16px;
-  cursor: pointer;
-}
-.item .icon a {
-  font-family: "Merriweather", serif;
-  font-size: 14px;
-  font-weight: 400;
-  color: #999;
-  text-transform: none;
-}
-.item .icon svg {
-  width: 32px;
-  height: 32px;
-  float: left;
-}
-.item .icon .icon-topic {
-  opacity: 0;
-  padding-left: 0px;
-  transition: 0.4s;
-  display: inline-block;
-  top: 0px;
-  position: relative;
-}
-.item .icon:hover .icon-topic {
-  opacity: 1;
-  padding-left: 10px;
-}
-
-@media only screen and (max-width: 768px) {
-  .item .icon {
-    position: relative;
-    top: 0;
-    left: 0;
-  }
-}
-
-@media only screen and (max-width: 746px) {
- .posts-container{
-   margin-left: 7%;
-  }
-}
-
-
-</style>

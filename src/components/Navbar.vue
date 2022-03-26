@@ -20,6 +20,9 @@
             <li class="nav-item">
            <router-link :to="{name:'blog'}" class="nav-link"> Blogs</router-link>
         </li>
+          <li class="nav-item">
+           <router-link :to="{name:'BlogsTester'}" class="nav-link"> Blogs Tester</router-link>
+        </li>
          <li class="nav-item">
                  <router-link :to="{name:'profile'}" class="nav-link">Profile</router-link>
 

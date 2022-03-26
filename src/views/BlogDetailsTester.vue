@@ -3,96 +3,7 @@
   
 <template>
   
-<div class="header-logo py-5 d-none d-lg-block">
-  <div class="container">
-    <div class="row justify-content-center">
-      <div class="col-lg-6 text-center">
-        <a class="navbar-brand" href="index.html"><img src="images/logo.png" alt="" class="img-fluid w-100"></a>
-      </div>
-    </div>
-  </div>
-</div>
 
-<header class="header-top bg-grey justify-content-center">
-   <nav class="navbar navbar-expand-lg navigation">
-      <div class="container">
-          <a class="navbar-brand d-lg-none" href="index.html"><img src="images/logo.png" alt="" class="img-fluid"></a>
-
-          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="ti-menu"></span>
-          </button>
-              <div class="collapse navbar-collapse" id="navbarContent">
-                  <ul id="menu" class="menu navbar-nav ">
-                      <li class="nav-item dropdown  pl-0">
-                          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                           Home
-                          </a>
-                          <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <a class="dropdown-item" href="index.html">Home 1</a>
-                            <a class="dropdown-item" href="index-2.html">Home 2</a>
-                            <a class="dropdown-item" href="index-3.html">Home 3</a>
-                            <a class="dropdown-item" href="index-4.html">Home 4</a>
-                            <a class="dropdown-item" href="index-5.html">Home 5</a>
-                            <a class="dropdown-item" href="index-6.html">Home 6</a>
-                          </div>
-                      </li>
-                      <li class="nav-item dropdown">
-                          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown2" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                           Blog Posts
-                          </a>
-                          <div class="dropdown-menu" aria-labelledby="navbarDropdown2">
-                            <a class="dropdown-item" href="standard-fullwidth.html">Standard Fullwidth</a>
-                            <a class="dropdown-item" href="standard-left-sidebar.html">Standard Left Sidebar</a>
-                            <a class="dropdown-item" href="standard-right-sidebar.html">Standard Right Sidebar</a>
-                          </div>
-                      </li>
-
-                      <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
-                      <li class="nav-item"><a href="fashion.html" class="nav-link">Category</a></li>
-                      <li class="nav-item dropdown">
-                          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown3" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                           Post Formats
-                          </a>
-                          <div class="dropdown-menu" aria-labelledby="navbarDropdown3">
-                            <a class="dropdown-item" href="post-video.html">Video Formats</a>
-                            <a class="dropdown-item" href="post-audio.html">Audio Format</a>
-                            <a class="dropdown-item" href="post-link.html">Quote Format</a>
-                            <a class="dropdown-item" href="post-gallery.html">Gallery Format</a>
-                            <a class="dropdown-item" href="post-image.html">Image Format</a>
-                          </div>
-                      </li>
-                      <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
-                      <li class="nav-item d-lg-none"><div class="search_toggle p-3 d-inline-block bg-white"><i class="ti-search"></i></div></li>
-                  </ul>
-              </div>
-
-              <div class="text-right search d-none d-lg-block"> 
-                <div class="search_toggle"><i class="ti-search"></i></div>
-              </div>
-          </div>
-    </nav>
-
-</header>
-<!--search overlay start-->
-<div class="search-wrap">
-    <div class="overlay">
-        <form action="#" class="search-form">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-10 col-9">
-                        <input type="text" class="form-control" placeholder="Search...">
-                    </div>
-                    <div class="col-md-2 col-3 text-right">
-                        <div class="search_toggle toggle-wrap d-inline-block">
-                            <i class="ti-close"></i>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </form>
-    </div>
-</div>
-<!--search overlay end-->
 
 <section class="single-block-wrapper section-padding">
 	<div class="container">
@@ -100,10 +11,6 @@
 			<div class="col-lg-8 col-md-12 col-sm-12 col-xs-12">
 				<div class="single-post">
     <div class="post-header mb-5 text-center">
-        <div class="meta-cat">
-            <a class="post-category font-extra text-color text-uppercase font-sm letter-spacing-1" href="#">Health ,</a>
-            <a class="post-category font-extra text-color text-uppercase font-sm letter-spacing-1" href="#">lifestyle</a>
-        </div>
         <h2 class="post-title mt-2">
             First Look At Self-Portrait's Autumn Collection
         </h2>
@@ -124,82 +31,18 @@
             <blockquote>
                 <i class="ti-quote-left mr-2"></i>A wise girls knows her limit to touch the sky.Repellat sapiente neque iusto praesentium adipisci.The question gave me an idea, so I answered quickly before Perry could say anything.<i class="ti-quote-right ml-2"></i>
             </blockquote>
-
-            <div class="row">
-                <div class="col-lg-6 col-md-6">
-                    <img src="https://i.postimg.cc/NjqQnjfL/reading.jpg" alt="post-ads" class="img-fluid mr-4 w-100">
-                </div>
-                <div class="col-lg-6 col-md-6">
-                    <img src="https://i.postimg.cc/NjqQnjfL/reading.jpg" alt="post-ads" class="img-fluid mr-4 w-100">
-                </div>
-            </div>
-            <h3 class="mt-5 mb-3">Enjoying the view of summer</h3>
-
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Unde cum delectus exercitationem 
-                natus quidem enim error suscipit. Iure cupiditate nobis quaerat consectetur! Vero aliquam, 
-                amet ipsum ullam reiciendis nostrum voluptate accusantium provident ut blanditiis incidunt. </p>
-
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates ab ratione animi nobis in et consequatur 
-                earum modi repellendus, qui, non debitis pariatur tempora consequuntur!</p>
-        </div>
-        
-        <div class="post-tags py-4">
-            <a href="#">#Health</a>
-            <a href="#">#Game</a>
-            <a href="#">#Tour</a>
-        </div>
-            
-
-        <div class="tags-share-box center-box d-flex text-center justify-content-between border-top border-bottom py-3">
-
-            <span class="single-comment-o"><i class="fa fa-comment-o"></i>0 comment</span>
-
-            <div class="post-share">
-                <span class="count-number-like">2</span>
-                <a class="penci-post-like single-like-button"><i class="ti-heart"></i></a>                    
-            </div>
-
-            <div class="list-posts-share">
-                <a target="_blank" rel="nofollow" href="#"><i class="ti-facebook"></i></a>
-                <a target="_blank" rel="nofollow" href="#"><i class="ti-twitter"></i></a>
-                <a target="_blank" rel="nofollow" href="#"><i class="ti-pinterest"></i></a>
-                <a target="_blank" rel="nofollow" href="#"><i class="ti-linkedin"></i></a>
-            </div>
         </div>
     </div>
 </div>
 				
 				<div class="post-author d-flex my-5">
 	<div class="author-img">
-		<img alt="" src="images/author.jpg" class="avatar avatar-100 photo" width="100" height="100">	
+		<img id="profile" src="https://i.postimg.cc/jdg3sPqC/default-profile.jpg
+" class="avatar avatar-100 photo" width="100" height="100">	
 	</div>
 
-	<div class="author-content pl-4">
-		<h4 class="mb-3"><a href="#" title="" rel="author" class="text-capitalize">Themefisher</a></h4>
-		<p>Hey there. My name is Liam. I was born with the love for traveling. I also love taking photos with my phone in order to capture moment..</p>
-		
-		<a target="_blank" class="author-social" href="#"><i class="ti-facebook"></i></a>
-		<a target="_blank" class="author-social" href="#"><i class="ti-twitter"></i></a>
-		<a target="_blank" class="author-social" href="#"><i class="ti-google-plus"></i></a>
-		<a target="_blank" class="author-social" href="#"><i class="ti-instagram"></i></a>
-		<a target="_blank" class="author-social" href="#"><i class="ti-pinterest"></i></a>
-		<a target="_blank" class="author-social" href="#"><i class="ti-tumblr"></i></a>
-	</div>
 </div>
-				<nav class="post-pagination clearfix border-top border-bottom py-4">
-    <div class="prev-post">
-        <a href="blog-single.html">
-            <span class="text-uppercase font-sm letter-spacing">Next</span>
-            <h4 class="mt-3"> Intel’s new smart glasses actually look good</h4>
-        </a>
-    </div>
-    <div class="next-post">
-        <a href="blog-single.html">
-            <span class="text-uppercase font-sm letter-spacing">Previous</span>
-            <h4 class="mt-3">Free Two-Hour Delivery From Whole Foods</h4>
-        </a>
-    </div>
-</nav>
+				
 				<div class="related-posts-block mt-5">
     <h3 class="news-title mb-4 text-center">
        You May Also Like
@@ -244,41 +87,6 @@
     </div>
 </div>
 
-					<div class="comment-area my-5">
-		<h3 class="mb-4 text-center">2 Comments</h3>
-		<div class="comment-area-box media">
-			<img alt="" src="https://i.postimg.cc/NjqQnjfL/reading.jpg" class="img-fluid float-left mr-3 mt-2">
-
-			<div class="media-body ml-4">
-				<h4 class="mb-0">Micle harison </h4>
-				<span class="date-comm font-sm text-capitalize text-color"><i class="ti-time mr-2"></i>June 7, 2019 </span>
-
-				<div class="comment-content mt-3">
-					<p>Lorem ipsum dolor sit amet, usu ut perfecto postulant deterruisset, libris causae volutpat at est, ius id modus laoreet urbanitas. Mel ei delenit dolores.</p>
-				</div>
-				<div class="comment-meta mt-4 mt-lg-0 mt-md-0">
-					<a href="#" class="text-underline ">Reply</a>
-				</div>
-			</div>
-		</div>
-
-		<div class="comment-area-box media mt-5">
-			<img alt="" src="https://i.postimg.cc/NjqQnjfL/reading.jpg" class="mt-2 img-fluid float-left mr-3">
-
-			<div class="media-body ml-4">
-				<h4 class="mb-0 ">John Doe </h4>
-				<span class="date-comm font-sm text-capitalize text-color"><i class="ti-time mr-2"></i>June 7, 2019 </span>
-
-				<div class="comment-content mt-3">
-					<p>Some consultants are employed indirectly by the client via a consultancy staffing company. </p>
-				</div>
-				<div class="comment-meta mt-4 mt-lg-0 mt-md-0">
-					<a href="#" class="text-underline">Reply</a>
-				</div>
-			</div>
-		</div>
-	</div>
-
 	<form class="comment-form mb-5 gray-bg p-5" id="comment-form">
 		<h3 class="mb-4 text-center">Leave  a comment</h3>
 		<div class="row">
@@ -306,12 +114,11 @@
 					<div class="sidebar-wrap mt-5 mt-lg-0">
 	<div class="sidebar-widget about mb-5 text-center p-3">
 		<div class="about-author">
-			<img src="https://i.postimg.cc/NjqQnjfL/reading.jpg" alt="" class="img-fluid">
+			<img src="https://i.postimg.cc/jdg3sPqC/default-profile.jpg" alt="" class="img-fluid">
 		</div>
-		<h4 class="mb-0 mt-4">Liam Mason</h4>
-		<p>Travel Blogger</p>
-		<p>I'm Liam, last year I decided to quit my job and travel the world. You can follow my journey on this blog!</p>
-		<img src="https://i.postimg.cc/NjqQnjfL/reading.jpg" alt="" class="img-fluid">
+		<h4 class="mb-0 mt-4">Author</h4>
+		<p>idk</p>
+		<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil a dicta perferendis cupiditate cumque nesciunt doloremque suscipit sequi recusandae, quia consectetur debitis. Quasi, et! In non maiores, voluptates corrupti dolores corporis, unde ullam vero dolor iusto, deserunt voluptate inventore dicta. In vitae officiis cum error.</p>
 	</div>
 
 	<div class="sidebar-widget follow mb-5 text-center">
