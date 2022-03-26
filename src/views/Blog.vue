@@ -63,7 +63,6 @@
 			</div>
          <router-link class="read-more" :to="{ name: 'BlogDetails', params: { id: post._id } }" >Read more<i class="fa fa-long-arrow-right"></i></router-link>
         <br>           
-         <router-link class="read-more" :to="{ name: 'BlogDetailsTester', params: { id: post._id } }" >Testing<i class="fa fa-long-arrow-right"></i></router-link>
 		</article>
 	</div>
 

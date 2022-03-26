@@ -7,7 +7,7 @@ import profile from '../views/Profile.vue'
 import blog from '../views/Blog.vue'
 import BlogsTester from '../views/BlogsTester.vue'
 import BlogDetails from '../views/BlogDetails.vue'
-import BlogDetailsTester from '../views/BlogDetailsTester.vue'
+
 import NotFound from '../views/NotFound.vue'
 import Admin from '../views/Admin.vue'
 import AdminTester from '../views/AdminTester.vue'
@@ -59,12 +59,7 @@ const routes = [
     props: true
   }
   ,
-  {
-    path: '/blogtest/:id',
-    name: 'BlogDetailsTester',
-    component: BlogDetailsTester,
-    props: true
-  },
+
   {
     path: '/admin',
     name: 'admin',
