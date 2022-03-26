@@ -9,7 +9,6 @@ import BlogDetails from '../views/BlogDetails.vue'
 
 import NotFound from '../views/NotFound.vue'
 import Admin from '../views/Admin.vue'
-import AdminTester from '../views/AdminTester.vue'
 import CreateBlog from '../views/CreateBlog.vue'
 
 const routes = [
@@ -60,11 +59,7 @@ const routes = [
     component:Admin
   },
   
-  {
-    path: '/admintester',
-    name: 'admintester',
-    component:AdminTester
-  },
+
   {
     path: '/create',
     name: 'CreateBlog',

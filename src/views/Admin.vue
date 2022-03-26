@@ -1,6 +1,7 @@
 <template>
 <div v-if="posts" class="all">
 
+
 <!-- display counter -->
 <div class="container-fluid pt-4 px-4">
                 <div class="row g-4">
@@ -53,6 +54,67 @@
                 </div>
 
 
+<!-- TESTING -->
+<div v-for="user of filteredUsers" :key="user._id">
+
+
+
+  <!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Update user</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+       <div class="mb-3">
+        <label for="addName" class="form-label">Name</label>
+        <input
+          class="form-control"
+          type="text"
+          name="addName"
+          id="addName"
+          v-model="fullname"
+        />
+      </div>
+      <div class="mb-3">
+        <label for="addEmail" class="form-label">Email</label>
+        <input
+          class="form-control"
+          type="email"
+          name="addEmail"
+          id="addEmail"
+          v-model="email"
+        />
+      </div>
+      <div class="mb-3">
+        <label for="addContact" class="form-label">Phone Number</label>
+        <input
+          class="form-control"
+          type="text"
+          name="addContact"
+          id="addContact"
+          v-model="phone_number"
+        />
+      </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button  @click="updateUser()" type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+</div>
+
+  <!-- END -->
+
+
+
+
  <h1>users</h1>
 <!-- users table -->
 <table >
@@ -80,7 +142,9 @@
         {{user.join_date}}
       </td>
       <td >
-        <button>edit</button>
+        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+      edit
+</button>
       </td>
        <td >
         <button>delete</button>
@@ -175,6 +239,8 @@ export default {
       title: "",
       search: "",
       fullname: "",
+      email: "",
+      phone_number: "",
     };
   },
   mounted() {
@@ -197,6 +263,33 @@ export default {
 
   },
    methods: {
+        updateUser() {
+      if (!localStorage.getItem("jwt")) {
+        alert("User not logged in");
+        return this.$router.push({ name: "Login" });
+      }
+      fetch("https://blog-capstone-h.herokuapp.com/users/" + this.id, {
+        method: "PUT",
+        body: JSON.stringify({
+          fullname: this.fullname,
+          email: this.email,
+          phone_number: this.phone_number,
+        }),
+        headers: {
+          "Content-type": "application/json; charset=UTF-8",
+          Authorization: `Bearer ${localStorage.getItem("jwt")}`,
+        },
+      })
+        .then((response) => response.json())
+        .then((json) => {
+          this.user = json;
+          alert("User Updated!");
+          location.reload();
+        })
+        .catch((err) => {
+          alert(err);
+        });
+    },
     sortTitle(dir) {
       this.filteredBlogs = this.filteredBlogs.sort((a, b) => {
         if (a.title < b.title) {
