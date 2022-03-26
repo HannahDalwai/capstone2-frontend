@@ -1,16 +1,31 @@
 <template>
-
-<!-- CREATE BLOG -->
-    <button>
-   <router-link  :to="{name:'CreateBlog'}" class="nav-link"> CreateBlog</router-link>
- </button>
-
-<!-- POSTS -->
 <div v-if="posts" class="all">
 
-  <h2>Blogs</h2>
-  <p>{{posts.length}} posts found</p>
-    <label>
+<!-- display counter -->
+<div class="container-fluid pt-4 px-4">
+                <div class="row g-4">
+                    <div class="col-sm-6 col-xl-3">
+                        <div class="bg-light rounded d-flex align-items-center justify-content-between p-4">
+                            <i class='bx bx-edit bx-lg'  ></i>
+                            <div class="ms-6">
+                                <p class="mb-2">{{posts.length}}</p>
+                                <h6 class="mb-0">Blogs posted</h6>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-sm-6 col-xl-3">
+                        <div class="bg-light rounded d-flex align-items-center justify-content-between p-4">
+                            <i class='bx bxs-user bx-lg'></i>
+                            <div class="ms-3">
+                                <p class="mb-2">{{users.length}}</p>
+                                <h6 class="mb-0">Users created</h6>
+                            </div>
+                        </div>
+                    </div>
+
+<!-- sort and search -->
+<div class="col-sm-6 col-xl-3">
+         <label>
         Sort Title:
         <select v-model="title" @change="sortTitle(title)">
             <option value="">All</option>
@@ -18,46 +33,11 @@
           <option value="desc">Descending</option>
         </select>
       </label>
-      <input type="text"  placeholder="search" v-model="search">
+      <br> <br>
+          <input type="text"  placeholder="search blogs" v-model="search">
+       </div>
 
-    <div class="posts-container" v-if="posts">
-
-      <div v-for="post of filteredPosts" :key="post._id" >
-
-<div class="container">
-  <div class="row">
-    <div class="col-md-6 item">
-      <div class="item-in">
-        <h4>{{post.title}}</h4>
-        <div class="seperator"></div>
-        <p>{{post.description.substring(0,200)}}</p>
-         <router-link class="read-more" :to="{ name: 'BlogDetails', params: { id: post._id } }" >Read more<i class="fa fa-long-arrow-right"></i></router-link>
-         <button @click="deletePost(post._id)" class="btn btn-danger me-3">Delete</button>
-      </div>
-      </div>
-    </div>
-   
-    </div>
-    </div>
-    </div>
-    </div>
-    
-  <div v-else>
-    Loading blogs... 
-    <Loader/>
- </div>
-
-
-
- <!-- USERS -->
-
-<div v-if="users" class="all">
-
-
-  
-
-  <h2>Users</h2>
-  <p>{{users.length}} users found</p>
+    <div class="col-sm-6 col-xl-3">
     <label>
         Sort Fullname:
         <select v-model="fullname" @change="sortUsers(fullname)">
@@ -66,35 +46,119 @@
           <option value="desc">Descending</option>
         </select>
       </label>
-      <input type="text"  placeholder="search" v-model="search">
+      <br> <br>
+      <input type="text"  placeholder="search users" v-model="search">
+<div v-for="user of filteredUsers" :key="user._id">
+                    </div>
+                </div>
 
-    <div class="posts-container" v-if="users">
 
-      <div v-for="user of filteredUsers" :key="user._id">
-
-<div class="users">
-  <div class="row">
-    <div class="col-md-6 item">
-      <div class="user">
-        <h4>{{user.fullname}}</h4>
-        <h4>{{user.email}}</h4>
-        <div class="seperator"></div>
-        <p>{{user.contact}}</p>
-      </div>
-      </div>
-    </div>
-   
-    </div>
-    </div>
-    </div>
-    </div>
+ <h1>users</h1>
+<!-- users table -->
+<table >
+  <tr class="table-header">
+    <th>user</th>
+    <th>email</th>
+    <th>contact</th>
+    <th>member since</th>
+    <th>actions</th>
+    <th></th>
     
-  <div v-else>
-    Loading users... 
-    <Loader/>
+
+  </tr>
+    <tr v-for="user of filteredUsers" :key="user._id">
+      <td >
+         {{user.fullname}}
+        </td>
+      <td >
+        {{user.phone_number}}
+      </td>
+      <td >
+        {{user.email}}
+      </td>
+      <td >
+        {{user.join_date}}
+      </td>
+      <td >
+        <button>edit</button>
+      </td>
+       <td >
+        <button>delete</button>
+      </td>
+     
+      <!-- <td >
+        {{user.password}}
+      </td> --> 
+       <!-- <td >
+        role
+      </td> -->
+
+    </tr>
+  </table>
+
+
+
+
+<h1>blogs</h1>
+<!-- blogs table -->
+
+<table >
+  <tr class="table-header">
+    <th>title</th>
+    <th>category</th>
+    <th>description</th>
+    <th>img url</th>
+    <th>actions</th>
+    <th></th>
+    
+
+  </tr>
+    <tr v-for="post of filteredPosts" :key="post._id" >
+      <td >
+         {{post.title}}
+        </td>
+      <td >
+        {{post.category}}
+      </td>
+      <td >
+        {{post.img}}
+      </td>
+      <td >
+        {{post.description.substring(0,5)}}
+      </td>
+      <td >
+        <button>edit</button>
+      </td>
+       <td >
+         <button @click="deletePost(post._id)" class="btn btn-danger me-3">Delete</button>
+      </td>
+     
+      <!-- <td >
+        {{user.password}}
+      </td> --> 
+       <!-- <td >
+        role
+      </td> -->
+
+    </tr>
+  </table>
+
+
+
+
+ </div>
+ </div>
  </div>
 
+ 
+
+    
+  <div v-else>
+    Loading blogs... 
+    <Loader/>
+ </div>            
 </template>
+
 
 <script>
 import Loader from '../components/Loader.vue'
@@ -107,10 +171,10 @@ export default {
       posts: null,
       users: null,
       filteredBlogs: null,
+      filteredUsers: null,
       title: "",
       search: "",
       fullname: "",
-      
     };
   },
   mounted() {
@@ -199,164 +263,108 @@ computed: {
 
 };
 </script>
-
 <style scoped>
-.user{
-  background: white;
-  padding: 5px;
-  margin-top: 50px;
+.container {
+   width: 950px;
+   margin: auto;
 }
 
 
 
-/* card */
-@import url(https://fonts.googleapis.com/css?family=Merriweather:400,300,700);
-@import url(https://fonts.googleapis.com/css?family=Montserrat:400,700);
+table {
+   width: 100%;
+}
 
+th, td {
+   padding-top: 15px;
+   padding-bottom: 15px;
+   padding-left: 15px;
+}
 
-/* .posts-container{
-  margin-left: 30%;
+th {
+   text-align: left;
+   background-color: #F2F2F2;
+   color: #65696B;
+}
+
+tr:nth-child(odd) {
+   background: #F9F9F9;
+   border-top: 1px solid transparent;
+   border-left: 1px solid transparent;
+}
+
+tr:nth-child(even) {
+   background: #FFF;
+   border-top: 1px solid transparent;
+   border-left: 1px solid transparent;
+}
+
+tr:hover {
+   background-color: #EBF5FB;
+   cursor: default;
+   border: 1px solid #67B2E4;
+}
+
+.username {
+   color: #3498DB;
+}
+
+.username:hover, a:hover {
+   color: #3498DB;
+   cursor: pointer;
+   text-decoration: underline;
+}
+
+/* .activeUser {
+   color: #03AB61;
 } */
 
-h1, h4 {
-  font-family: "Montserrat", sans-serif;
+/* .bannedUser, .suspendedUser {
+   font-weight: 600;
+} */
+.bannedUser {
+   color: red;
 }
 
-.row {
-  padding: 50px 0;
+.suspendedUser {
+   color: #FF8C00;
 }
 
-.seperator {
-  margin-bottom: 30px;
-  width: 35px;
-  height: 3px;
-  background: #777;
-  border: none;
+.commenter {
+   color: #9A9DA0;
 }
 
-.title {
-  text-align: center;
-}
-.title .row {
-  padding: 50px 0 0;
-}
-.title h1 {
-  text-transform: uppercase;
-}
-.title .seperator {
-  margin-top: 0;
-  margin-left:50%;
+.admin, .staff, .moderator {
+   font-weight: 600;
 }
 
-.item {
-  position: relative;
-  margin-bottom: 30px;
-  min-height: 1px;
-  float: left;
-  /* -webkit-backface-visibility: hidden; */
-  -webkit-tap-highlight-color: transparent;
-  -webkit-touch-callout: none;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
-}
-.item .item-in {
-  background: #fff;
-  padding: 40px;
-  position: relative;
-}
-.item .item-in:hover:before {
-  width: 100%;
-}
-.item .item-in::before {
-  content: "";
-  position: absolute;
-  bottom: 0px;
-  height: 2px;
-  width: 0%;
-  background: #333333;
-  right: 0px;
-  transition: width 0.4s;
+a {
+   color: #3498DB;
+   text-decoration: none;
 }
 
-.item h4 {
-  font-size: 18px;
-  margin-top: 25px;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-}
-.item p {
-  font-size: 12px;
-}
-.item a {
-  font-family: "Montserrat", sans-serif;
-  font-size: 12px;
-  text-transform: uppercase;
-  color: #666666;
-  margin-top: 10px;
-}
-.item a i {
-  opacity: 0;
-  padding-left: 0px;
-  transition: 0.4s;
-  font-size: 24px;
-  display: inline-block;
-  top: 5px;
-  position: relative;
-}
-.item a:hover {
-  text-decoration: none;
-}
-.item a:hover i {
-  padding-left: 10px;
-  opacity: 1;
-  font-weight: 300;
+
+i {
+   float: right;
+   padding: 0px 15px;
+   color: #787D80;
+   font-size: 12px;
 }
 
-.item .icon {
-  position: absolute;
-  top: 27px;
-  left: -16px;
-  cursor: pointer;
+tr.table-header {
+  border: 1px solid #BBBEBF;
 }
-.item .icon a {
-  font-family: "Merriweather", serif;
+
+
+
+input[type=text] {
+  padding: 6px;
+  margin-top: 5px;
   font-size: 14px;
-  font-weight: 400;
-  color: #999;
-  text-transform: none;
-}
-.item .icon svg {
-  width: 32px;
-  height: 32px;
-  float: left;
-}
-.item .icon .icon-topic {
-  opacity: 0;
-  padding-left: 0px;
-  transition: 0.4s;
-  display: inline-block;
-  top: 0px;
-  position: relative;
-}
-.item .icon:hover .icon-topic {
-  opacity: 1;
-  padding-left: 10px;
+  width: 300px;
+  border: 1px solid #9A9DA0;
+  border-radius: 2px;
 }
 
-@media only screen and (max-width: 768px) {
-  .item .icon {
-    position: relative;
-    top: 0;
-    left: 0;
-  }
-}
-
-@media only screen and (max-width: 746px) {
- .posts-container{
-   margin-left: 7%;
-  }
-}
 
 </style>
