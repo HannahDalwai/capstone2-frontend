@@ -4,7 +4,7 @@
         <div class="container py-4">
             <div class="row gy-4 gx-5">
                 <div class="col-lg-12 col-md-12 col-sm-12">
-                    <h5 class="h1 text-white">Stay Healthy</h5>
+                    <h5 class="h1 text-white">Stay Mindful <img class="heart" src="https://i.postimg.cc/FRP7HSps/pink-heart2.png" alt=""> </h5>
                     <p class="small text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt.</p>
                     <p class="small text-muted mb-0">&copy; Copyrights. All rights reserved. <a target="_blank" href="https://github.com/HannahDalwai">Hannah Dalwai</a></p>
                 </div>
@@ -23,6 +23,10 @@ export default {
 </script>
 
 <style scoped>
+.heart{
+  height: 30px;
+  width: 30px;
+}
 .contain{
   position: absolute;
   position: unset;

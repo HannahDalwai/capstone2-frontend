@@ -1,7 +1,5 @@
 <template>
 <div v-if="posts" class="all">
-
-
 <!-- display counter -->
 <div class="container-fluid pt-4 px-4">
                 <div class="row g-4">
@@ -23,7 +21,6 @@
                             </div>
                         </div>
                     </div>
-
 <!-- sort and search -->
 <div class="col-sm-6 col-xl-3">
          <label>
@@ -37,7 +34,6 @@
       <br> <br>
           <input type="text"  placeholder="search blogs" v-model="search">
        </div>
-
     <div class="col-sm-6 col-xl-3">
     <label>
         Sort Fullname:
@@ -52,12 +48,8 @@
 <div v-for="user of filteredUsers" :key="user._id">
                     </div>
                 </div>
-
-
 <!-- TESTING -->
 <div v-for="user of filteredUsers" :key="user._id">
-
-
 
   <!-- Modal -->
 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -107,26 +99,20 @@
   </div>
 </div>
 
-
 </div>
 
   <!-- END -->
-
-
-
-
  <h1>users</h1>
 <!-- users table -->
+<div class="table-responsive">  
 <table >
-  <tr class="table-header">
+  <tr class="table-header table-dark">
     <th>user</th>
     <th>email</th>
     <th>contact</th>
     <th>member since</th>
     <th>actions</th>
     <th></th>
-    
-
   </tr>
     <tr v-for="user of filteredUsers" :key="user._id">
       <td >
@@ -142,40 +128,34 @@
         {{user.join_date}}
       </td>
       <td >
-        <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
-      edit
+        <button type="button" class="iconic-pencil"  data-bs-toggle="modal" data-bs-target="#exampleModal">
+      <i class='bx bxs-pencil bx-sm' ></i>
 </button>
       </td>
        <td >
-        <button>delete</button>
+        <button  class="iconic-trash"><i class='bx bxs-trash-alt bx-sm' ></i></button>
       </td>
-     
       <!-- <td >
         {{user.password}}
       </td> --> 
        <!-- <td >
         role
       </td> -->
-
     </tr>
   </table>
-
-
-
+   </div>
 
 <h1>blogs</h1>
 <!-- blogs table -->
-
+<div class="table-responsive">  
 <table >
-  <tr class="table-header">
+  <tr class="table-dark table-header">
     <th>title</th>
     <th>category</th>
-    <th>description</th>
     <th>img url</th>
+    <th>description</th>
     <th>actions</th>
     <th></th>
-    
-
   </tr>
     <tr v-for="post of filteredPosts" :key="post._id" >
       <td >
@@ -191,42 +171,31 @@
         {{post.description.substring(0,5)}}
       </td>
       <td >
-        <button>edit</button>
+        <button  class="iconic-pencil"><i class='bx bxs-pencil bx-sm' ></i>
+</button>
       </td>
        <td >
-         <button @click="deletePost(post._id)" class="btn btn-danger me-3">Delete</button>
+         <button @click="deletePost(post._id)"  class="iconic-trash"><i class='bx bxs-trash-alt bx-sm' ></i></button>
       </td>
-     
       <!-- <td >
         {{user.password}}
       </td> --> 
        <!-- <td >
         role
       </td> -->
-
     </tr>
   </table>
-
-
-
-
+  </div>
  </div>
  </div>
  </div>
-
- 
-
-    
   <div v-else>
     Loading blogs... 
     <Loader/>
  </div>            
 </template>
-
-
 <script>
 import Loader from '../components/Loader.vue'
-
 export default {
   props:["post","idx"],
   components: { Loader },
@@ -259,8 +228,6 @@ export default {
       this.filteredUsers = data
     })
         .catch(err => console.log(err.message))
-
-
   },
    methods: {
         updateUser() {
@@ -357,99 +324,57 @@ computed: {
 };
 </script>
 <style scoped>
+button.iconic-trash{
+color: red
+;
+}
+button.iconic-pencil{
+  color: yellow;
+}
 .container {
    width: 950px;
    margin: auto;
 }
-
-
-
 table {
    width: 100%;
 }
-
 th, td {
    padding-top: 15px;
    padding-bottom: 15px;
    padding-left: 15px;
 }
-
 th {
    text-align: left;
-   background-color: #F2F2F2;
-   color: #65696B;
+   
 }
-
 tr:nth-child(odd) {
    background: #F9F9F9;
    border-top: 1px solid transparent;
    border-left: 1px solid transparent;
 }
-
 tr:nth-child(even) {
    background: #FFF;
    border-top: 1px solid transparent;
    border-left: 1px solid transparent;
 }
-
 tr:hover {
    background-color: #EBF5FB;
    cursor: default;
    border: 1px solid #67B2E4;
 }
-
-.username {
-   color: #3498DB;
-}
-
-.username:hover, a:hover {
-   color: #3498DB;
-   cursor: pointer;
-   text-decoration: underline;
-}
-
-/* .activeUser {
-   color: #03AB61;
-} */
-
-/* .bannedUser, .suspendedUser {
-   font-weight: 600;
-} */
-.bannedUser {
-   color: red;
-}
-
-.suspendedUser {
-   color: #FF8C00;
-}
-
-.commenter {
-   color: #9A9DA0;
-}
-
-.admin, .staff, .moderator {
-   font-weight: 600;
-}
-
 a {
    color: #3498DB;
    text-decoration: none;
 }
-
-
 i {
    float: right;
    padding: 0px 15px;
-   color: #787D80;
    font-size: 12px;
 }
-
 tr.table-header {
   border: 1px solid #BBBEBF;
+  background-color: black;
 }
-
-
-
 input[type=text] {
   padding: 6px;
   margin-top: 5px;
@@ -458,6 +383,4 @@ input[type=text] {
   border: 1px solid #9A9DA0;
   border-radius: 2px;
 }
-
-
 </style>
