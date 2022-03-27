@@ -67,7 +67,7 @@
       <!-- <h2> {{ post.subtitle }} show sub  </h2>\ -->
 
       
-      <p>{{post.description.substring(0,200)}} </p>
+      <p>{{post.description.substring(0,100)}} </p>
       <p class="read-more">
                  <router-link class="read-more" :to="{ name: 'BlogDetails', params: { id: post._id } }" >Read more</router-link>
       </p>
