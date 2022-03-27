@@ -48,59 +48,6 @@
 <div v-for="user of filteredUsers" :key="user._id">
                     </div>
                 </div>
-<!-- TESTING -->
-<div v-for="user of filteredUsers" :key="user._id">
-
-  <!-- Modal -->
-<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog">
-    <div class="modal-content">
-      <div class="modal-header">
-        <h5 class="modal-title" id="exampleModalLabel">Update user</h5>
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-      </div>
-      <div class="modal-body">
-       <div class="mb-3">
-        <label for="addName" class="form-label">Name</label>
-        <input
-          class="form-control"
-          type="text"
-          name="addName"
-          id="addName"
-          v-model="fullname"
-        />
-      </div>
-      <div class="mb-3">
-        <label for="addEmail" class="form-label">Email</label>
-        <input
-          class="form-control"
-          type="email"
-          name="addEmail"
-          id="addEmail"
-          v-model="email"
-        />
-      </div>
-      <div class="mb-3">
-        <label for="addContact" class="form-label">Phone Number</label>
-        <input
-          class="form-control"
-          type="text"
-          name="addContact"
-          id="addContact"
-          v-model="phone_number"
-        />
-      </div>
-      </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button  @click="updateUser()" type="button" class="btn btn-primary">Save changes</button>
-      </div>
-    </div>
-  </div>
-</div>
-
-</div>
-
 <button>
    <router-link  :to="{name:'CreateBlog'}" class="nav-link">  create blog</router-link>
  </button>
@@ -133,14 +80,6 @@
       </td>
       <td >
         {{user.join_date}}
-      </td>
-      <td >
-        <button type="button" class="iconic-pencil"  data-bs-toggle="modal" data-bs-target="#exampleModal">
-      <i class='bx bxs-pencil bx-sm' ></i>
-</button>
-      </td>
-       <td >
-        <button  class="iconic-trash"><i class='bx bxs-trash-alt bx-sm' ></i></button>
       </td>
       <!-- <td >
         {{user.password}}
@@ -177,14 +116,7 @@
         {{post.img}}
       </td>
       <td >
-        {{post.description.substring(0,5)}}
-      </td>
-      <td >
-        <button  class="iconic-pencil"><i class='bx bxs-pencil bx-sm' ></i>
-</button>
-      </td>
-       <td >
-         <button @click="deletePost(post._id)"  class="iconic-trash"><i class='bx bxs-trash-alt bx-sm' ></i></button>
+        {{post.description.substring(0,7)}}
       </td>
       <!-- <td >
         {{user.password}}
@@ -309,13 +241,7 @@ computed: {
 };
 </script>
 <style scoped>
-button.iconic-trash{
-color: red
-;
-}
-button.iconic-pencil{
-  color: yellow;
-}
+
 .container {
    width: 950px;
    margin: auto;

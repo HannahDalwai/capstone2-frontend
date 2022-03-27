@@ -43,4 +43,11 @@ p{
   font-family: 'Open Sans', sans-serif;
   line-height: 1.4;
 }
+button.iconic-trash{
+color: rgb(202, 86, 86)
+;
+}
+button.iconic-pencil{
+  color: rgb(241, 241, 169);
+}
 </style>
