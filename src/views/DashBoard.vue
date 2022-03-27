@@ -62,8 +62,6 @@
     <th>email</th>
     <th>contact</th>
     <th>member since</th>
-    <th>actions</th>
-    <th></th>
   </tr>
     <tr v-for="user of filteredUsers" :key="user._id">
       <td >

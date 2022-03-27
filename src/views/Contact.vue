@@ -19,23 +19,25 @@
             style="animation-delay: 0.7s"
           >
             <form @submit.prevent="handleSubmit()">
-              <label for="name"><i class="fas fa-at"></i> Name </label>
+              <label for="name"><i class="fas fa-at"></i> </label>
               <input
                 type="text"
                 name="name"
                 v-model="name"
                 placeholder="Name"
               />
+              <br><br>
 
-              <label for="email"><i class="fas fa-at"></i> Email </label>
+              <label for="email"><i class="fas fa-at"></i> </label>
               <input
                 type="email"
                 name="email"
                 v-model="email"
                 placeholder="Email"
               />
+              <br> <br>
 
-              <label for="message"><i class="fas fa-at"></i> Message</label>
+              <label for="message"><i class="fas fa-at"></i> </label>
               <input
                 class="textarea"
                 type="textarea"
@@ -43,9 +45,10 @@
                 v-model="textarea"
                 placeholder="Message"
               />
-
+              <br>
               <div class="submit-buttons">
                 <input type="submit" value="Send" />
+
                 <input type="reset" value="Reset" class="btn-contact" />
               </div>
             </form>

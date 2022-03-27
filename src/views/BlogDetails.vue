@@ -24,13 +24,16 @@
       </div>
       <div class="mb-3">
         <label for="addEmail" class="form-label">category</label>
-        <input
-          class="form-control"
-          type="email"
-          name="addEmail"
-          id="addEmail"
+            <select
+          class="form-select"
+          name="addCategory"
+          id="addCategory"
           v-model="category"
-        />
+        >
+          <option value="skincare">skincare</option>
+          <option value="movement">movement</option>
+          <option value="feeling toolkit">feeling toolkit</option>
+        </select>
       </div>
       <div class="mb-3">
         <label for="addContact" class="form-label">img</label>

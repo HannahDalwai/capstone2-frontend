@@ -8,13 +8,16 @@
       placeholder="Heading"
       required
     />
+    <!-- <br><br>
     <input
       class="form-input neu-border-inset"
       type="text"
       v-model="subtitle"
       placeholder="Sub-Heading"
       required
-    />
+    /> -->
+        <br><br>
+
     <input
       class="form-input neu-border-inset"
       type="text"
@@ -22,6 +25,7 @@
       placeholder="Image Url"
       required
     />
+        <br><br>
       <select
           class="form-select"
           name="addCategory"
@@ -32,6 +36,7 @@
           <option value="movement">movement</option>
           <option value="feeling toolkit">feeling toolkit</option>
         </select>
+         <br><br>
       <input
       class="form-input neu-border-inset"
       type="text"
@@ -39,6 +44,8 @@
       placeholder="author"
       required
     />
+        <br><br>
+
     <textarea
       class="form-input neu-border-inset"
       type="text"
@@ -46,7 +53,7 @@
       placeholder="Body"
       required
     ></textarea>
-
+ <br><br>
 
     <button type="submit" class="form-btn neu-border">Create Blog</button>
   </form>
@@ -73,7 +80,7 @@ methods: {
         method: "POST",
         body: JSON.stringify({
           title: this.title,
-          subtitle: this.subtitle,
+          // subtitle: this.subtitle,
           description: this.description,
           img: this.img,
           category: this.category,
@@ -87,7 +94,7 @@ methods: {
         .then((response) => response.json())
         .then((json) => {
           alert("Post Created");
-          this.$router.push({ name: "blog" });
+          // this.$router.push({ name: "blog" });
         })
         .catch((err) => {
           alert(err);
