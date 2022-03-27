@@ -22,7 +22,7 @@
         </li>
         
          <li class="nav-item">
-                 <router-link :to="{name:'profile'}" class="nav-link">Profile</router-link>
+                 <router-link :to="{name:'DashBoard'}" class="nav-link">DashBoard</router-link>
 
         </li>
         <li class="nav-item">

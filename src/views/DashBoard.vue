@@ -32,7 +32,7 @@
         </select>
       </label>
       <br> <br>
-          <input type="text"  placeholder="search blogs" v-model="search">
+          <input type="text"  placeholder="search blogs" v-model="search1">
        </div>
     <div class="col-sm-6 col-xl-3">
     <label>
@@ -101,6 +101,10 @@
 
 </div>
 
+<button>
+   <router-link  :to="{name:'CreateBlog'}" class="nav-link">  create blog</router-link>
+ </button>
+
   <!-- END -->
  <h1>users</h1>
 <!-- users table -->
@@ -116,7 +120,10 @@
   </tr>
     <tr v-for="user of filteredUsers" :key="user._id">
       <td >
-         {{user.fullname}}
+         <router-link  :to="{name:'Profile', params:{
+           id: user._id
+         },}" class="nav-link">{{user.fullname}}</router-link>
+  
         </td>
       <td >
         {{user.phone_number}}
@@ -159,7 +166,9 @@
   </tr>
     <tr v-for="post of filteredPosts" :key="post._id" >
       <td >
-         {{post.title}}
+         <router-link  :to="{name:'BlogDetails', params:{
+           id: post._id
+         },}" class="nav-link">{{post.title}}</router-link>
         </td>
       <td >
         {{post.category}}
@@ -197,7 +206,7 @@
 <script>
 import Loader from '../components/Loader.vue'
 export default {
-  props:["post","idx"],
+  props:["post","idx", "id"],
   components: { Loader },
  data() {
     return {
@@ -207,6 +216,7 @@ export default {
       filteredUsers: null,
       title: "",
       search: "",
+      search1: "",
       fullname: "",
       email: "",
       phone_number: "",
@@ -282,36 +292,11 @@ export default {
       });
       if (dir == "desc") this.filteredUsers.reverse();
     },
-
-    // DELETE
-    deletePost(_id){
-      //   if (!localStorage.getItem("jwt")) {
-      //   alert("User not logged in");
-      //   return this.$router.push({ name: "Login" });
-      // }
-      let warning = "Are you sure";
-      if(confirm(warning) == true){
-
-      
-      fetch("https://blog-capstone-h.herokuapp.com/posts/" + _id, {
-        method: "DELETE",
-      
-      })
-        .then((response) => response.json())
-        .then((json) => {
-          alert("Post Deleted");
-          location.reload()
-        })
-        .catch((err) => {
-          alert(err);
-        });
-        }
-        },
    },
 computed: {
     filteredPosts: function () {
       return this.posts.filter((post) => {
-        return post.title.match(this.search);
+        return post.title.match(this.search1);
       });
     },
      filteredUsers: function () {

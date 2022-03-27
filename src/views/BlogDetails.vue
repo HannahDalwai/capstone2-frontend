@@ -1,11 +1,64 @@
-
-
-  
 <template>
-  
   <div v-if="post">
 
- 
+
+<MDBModal
+    id="exampleModal"
+    tabindex="-1"
+    labelledby="exampleModalLabel"
+    v-model="exampleModal"
+  >
+    <MDBModalHeader>
+      <MDBModalTitle id="exampleModalLabel"> Update User </MDBModalTitle>
+    </MDBModalHeader>
+    <MDBModalBody>
+      <div class="mb-3">
+        <label for="addName" class="form-label">title</label>
+        <input
+          class="form-control"
+          type="text"
+          name="addName"
+          id="addName"
+          v-model="title"
+        />
+      </div>
+      <div class="mb-3">
+        <label for="addEmail" class="form-label">category</label>
+        <input
+          class="form-control"
+          type="email"
+          name="addEmail"
+          id="addEmail"
+          v-model="category"
+        />
+      </div>
+      <div class="mb-3">
+        <label for="addContact" class="form-label">img</label>
+        <input
+          class="form-control"
+          type="text"
+          name="addContact"
+          id="addContact"
+          v-model="img"
+        />
+      </div>
+      <div class="mb-3">
+        <label for="addPassword" class="form-label">description</label>
+        <input
+          class="form-control"
+          type="password"
+          name="addPassword"
+          id="addPassword"
+          v-model="description"
+        />
+      </div>
+    </MDBModalBody>
+    <MDBModalFooter>
+      <MDBBtn color="secondary" @click="exampleModal = false">Close</MDBBtn>
+      <MDBBtn color="primary" @click="updatePost()">Update User</MDBBtn>
+    </MDBModalFooter>
+  </MDBModal>
+
 <section class="single-block-wrapper section-padding">
 	<div class="container">
 		<div class="row">
@@ -32,7 +85,7 @@
             <p> {{ post.description }}</p>
         </div>
     </div>
-</div>
+
 				
 			
 				
@@ -43,10 +96,10 @@
     <div class="row">
         <div class="col-lg-4 col-md-4 col-sm-6">
             <div class="post-block-wrapper mb-4 mb-lg-0">
-                 <img :src="posts[posts.length-6].img" alt="">
+                 <img :src="posts[posts.length-3].img" alt="">
                 <div class="post-content mt-3">
                     <h5>
-                     <div>{{posts[posts.length-6].title}}</div>
+                     <div>{{posts[posts.length-3].title}}</div>
                     </h5>
                 </div>
             </div>
@@ -124,7 +177,18 @@
 	
 
 		<div class="sidebar-post-item-big">
-			item
+		 <div class="my-2">
+          <MDBBtn
+            color="black"
+            aria-controls="exampleModal"
+            @click="exampleModal = true"
+          >
+            Update/Edit
+          </MDBBtn>
+                   <button @click="deletePost(post._id)"  class="iconic-trash"><i class='bx bxs-trash-alt bx-sm' ></i></button>
+
+          
+        </div>
 		</div> 
 	
 	
@@ -167,8 +231,10 @@
 		</div>
 	</div>
 	</div>
+	</div>
 </section>
  </div>
+ 
 
 <div v-else>
      <Loader/>
@@ -177,13 +243,40 @@
 
 <script>
 import Loader from '../components/Loader.vue'
+import {
+  MDBModal,
+  MDBModalHeader,
+  MDBModalTitle,
+  MDBModalBody,
+  MDBModalFooter,
+  MDBBtn,
+} from "mdb-vue-ui-kit";
+import { ref } from "vue";
 export default {
-    components: { Loader },
+    components: { Loader, MDBModal,
+    MDBModalHeader,
+    MDBModalTitle,
+    MDBModalBody,
+    MDBModalFooter,
+    MDBBtn, },
 
   props: ["id"],
   data() {
     return {
       post: null,
+         title:"",
+      category:"",
+      author:"",
+      description:"",
+      fullname:"",
+     img:"",
+     
+    };
+  },
+   setup() {
+    const exampleModal = ref(false);
+    return {
+      exampleModal,
     };
   },
   mounted() {
@@ -225,6 +318,62 @@ export default {
           });
       });
   },
+  methods: {
+    updatePost() {
+      if (!localStorage.getItem("jwt")) {
+        alert("User not logged in");
+        return this.$router.push({ name: "Login" });
+      }
+      fetch("https://blog-capstone-h.herokuapp.com/posts/" + this.id, {
+        method: "PUT",
+        body: JSON.stringify({
+          title: this.title,
+          description: this.description,
+          category: this.category,
+          img: this.img,
+        }),
+        headers: {
+          "Content-type": "application/json; charset=UTF-8",
+          Authorization: `Bearer ${localStorage.getItem("jwt")}`,
+        },
+      })
+        .then((response) => response.json())
+        .then((json) => {
+          this.post = json;
+          alert("User Updated!");
+          location.reload();
+        })
+        .catch((err) => {
+          alert(err);
+        });
+    },
+
+    // DELETE
+    deletePost(_id){
+        if (!localStorage.getItem("jwt")) {
+        alert("User not logged in");
+        return this.$router.push({ name: "Login" });
+      }
+      let warning = "Are you sure";
+      if(confirm(warning) == true){
+
+      
+      fetch("https://blog-capstone-h.herokuapp.com/posts/" + _id, {
+        method: "DELETE",
+      
+      })
+        .then((response) => response.json())
+        .then((json) => {
+          alert("Post Deleted");
+          location.reload()
+        })
+        .catch((err) => {
+          alert(err);
+        });
+        }
+        },
+  },
+  
 };
 </script>
 
