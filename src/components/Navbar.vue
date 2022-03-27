@@ -23,7 +23,9 @@
         
          <li class="nav-item">
                  <router-link :to="{name:'DashBoard'}" class="nav-link">DashBoard</router-link>
-
+        </li>
+        <li class="nav-item">
+                 <router-link :to="{name:'Contact'}" class="nav-link">Contact</router-link>
         </li>
         <li class="nav-item">
         <router-link  class="but nav-link" to="/Login"><i class='bx bx-log-out-circle'></i></router-link>

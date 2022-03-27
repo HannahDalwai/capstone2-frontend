@@ -6,8 +6,8 @@ import register from '../views/Register.vue'
 import DashBoard from '@/views/DashBoard.vue'
 import Profile from '@/views/Profile.vue'
 import blog from '../views/Blog.vue'
+import Contact from '../views/Contact.vue'
 import BlogDetails from '../views/BlogDetails.vue'
-
 import NotFound from '../views/NotFound.vue'
 import CreateBlog from '../views/CreateBlog.vue'
 
@@ -62,6 +62,12 @@ const routes = [
     path: '/create',
     name: 'CreateBlog',
     component:CreateBlog
+  },
+  ,
+  {
+    path: '/contact',
+    name: 'Contact',
+    component:Contact
   },
   {
     path: '/:catchAll(.*)',
