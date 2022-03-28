@@ -94,7 +94,7 @@ methods: {
         .then((response) => response.json())
         .then((json) => {
           alert("Post Created");
-          // this.$router.push({ name: "blog" });
+          this.$router.push({ name: "blog" });
         })
         .catch((err) => {
           alert(err);
