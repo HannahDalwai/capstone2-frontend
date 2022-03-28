@@ -188,7 +188,6 @@
           >
             Update/Edit
           </MDBBtn>
-                   <button @click="deletePost(post._id)"  class="iconic-trash"><i class='bx bxs-trash-alt bx-sm' ></i></button>
 
           
         </div>
@@ -350,31 +349,6 @@ export default {
           alert(err);
         });
     },
-
-    // DELETE
-    deletePost(_id){
-        if (!localStorage.getItem("jwt")) {
-        alert("User not logged in");
-        return this.$router.push({ name: "Login" });
-      }
-      let warning = "Are you sure";
-      if(confirm(warning) == true){
-
-      
-      fetch("https://blog-capstone-h.herokuapp.com/posts/" + _id, {
-        method: "DELETE",
-      
-      })
-        .then((response) => response.json())
-        .then((json) => {
-          alert("Post Deleted");
-          location.reload()
-        })
-        .catch((err) => {
-          alert(err);
-        });
-        }
-        },
   },
   
 };
