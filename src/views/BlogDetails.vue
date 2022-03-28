@@ -9,7 +9,7 @@
     v-model="exampleModal"
   >
     <MDBModalHeader>
-      <MDBModalTitle id="exampleModalLabel"> Update User </MDBModalTitle>
+      <MDBModalTitle id="exampleModalLabel"> Update Post </MDBModalTitle>
     </MDBModalHeader>
     <MDBModalBody>
       <div class="mb-3">
@@ -58,7 +58,7 @@
     </MDBModalBody>
     <MDBModalFooter>
       <MDBBtn color="secondary" @click="exampleModal = false">Close</MDBBtn>
-      <MDBBtn color="primary" @click="updatePost()">Update User</MDBBtn>
+      <MDBBtn color="primary" @click="updatePost()">Update Post</MDBBtn>
     </MDBModalFooter>
   </MDBModal>
 
