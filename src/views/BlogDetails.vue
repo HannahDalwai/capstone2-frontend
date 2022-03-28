@@ -323,10 +323,10 @@ export default {
   },
   methods: {
     updatePost() {
-      if (!localStorage.getItem("jwt")) {
-        alert("User not logged in");
-        return this.$router.push({ name: "Login" });
-      }
+      // if (!localStorage.getItem("jwt")) {
+      //   alert("User not logged in");
+      //   return this.$router.push({ name: "Login" });
+      // }
       fetch("https://blog-capstone-h.herokuapp.com/posts/" + this.id, {
         method: "PUT",
         body: JSON.stringify({
@@ -353,12 +353,12 @@ export default {
 
     // DELETE
     deletePost(_id){
-        if (!localStorage.getItem("jwt")) {
-        alert("User not logged in");
-        return this.$router.push({ name: "Login" });
-      }
-      let warning = "Are you sure";
-      if(confirm(warning) == true){
+      //   if (!localStorage.getItem("jwt")) {
+      //   alert("User not logged in");
+      //   return this.$router.push({ name: "Login" });
+      // }
+      // let warning = "Are you sure";
+      // if(confirm(warning) == true){
 
       
       fetch("https://blog-capstone-h.herokuapp.com/posts/" + _id, {
