@@ -31,8 +31,16 @@
                     </div>
 
 <br> <br>
-
+<!-- CATS -->
  <div class="col-sm-6 col-xl-3">
+<h1>categories</h1> 
+<button @click="setCategory(null)">All</button>
+<button @click="setCategory('skincare')">skincare</button>
+<button @click="setCategory('movement')">movement</button>
+<button @click="setCategory('feeling toolkit')">feeling toolkit</button>
+
+
+<!-- end -->
          <label>
         Sort Title:
         <select v-model="title" @change="sortTitle(title)">
@@ -99,6 +107,7 @@ export default {
     return {
       posts: null,
       filteredBlogs: null,
+      categoryChosen: "",
       title: "",
       search: "",
       
@@ -107,8 +116,6 @@ export default {
   mounted() {
     fetch("https://blog-capstone-h.herokuapp.com/posts")
         .then(res => res.json())
-        // .then(data => this.posts= data)
-        // this.filteredBlogs = data
     .then((data)=>{
       this.posts = data;
       this.filteredBlogs = data
@@ -117,6 +124,13 @@ export default {
 
   },
    methods: {
+    setCategory(postCat){
+this.categoryChosen=postCat
+
+    }
+
+
+,
     sortTitle(dir) {
       this.filteredBlogs = this.filteredBlogs.sort((a, b) => {
         if (a.title < b.title) {
@@ -131,11 +145,33 @@ export default {
     },
    },
 computed: {
+
+
+  // Cat
     filteredPosts: function () {
-      return this.posts.filter((post) => {
+      if(this.search[0]){
+        return this.posts.filter((post) => {
         return post.title.match(this.search);
       });
+      }else if(this.filteredCategory){
+      return this.filteredCategory
+      }else{
+        return this.posts
+      }
     },
+
+ filteredCategory: function () {
+   if (this.categoryChosen){
+return this.posts.filter((post) => {
+        return post.category.match(this.categoryChosen);
+      })
+   }
+   else{
+     return this.posts
+   } 
+    },
+    
+
   },
 
 };
