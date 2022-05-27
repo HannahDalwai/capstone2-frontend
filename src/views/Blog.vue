@@ -2,7 +2,7 @@
 <div v-if="posts" class="all">
 <h3>Latest Blogs</h3>
                 <div class="row g-4">
-                    <div class="col-sm-6 col-xl-4 col-md-6">
+                    <div class="col-sm-6 col-xl-3 col-md-6">
                         <div id="latest" class="bg-light rounded d-flex align-items-center justify-content-between p-4">
                             <img class="latest" :src="posts[posts.length-1].img" alt="">
                             <div class="ms-6">
@@ -11,7 +11,7 @@
                             </div>
                         </div>
                     </div>
-                     <div class="col-sm-6 col-xl-4 col-md-6">
+                     <div class="col-sm-6 col-xl-3 col-md-6">
                         <div id="latest" class="bg-light rounded d-flex align-items-center justify-content-between p-4">
                             <img class="latest" :src="posts[posts.length-2].img" alt="">
                             <div class="ms-6">
@@ -20,7 +20,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-sm-6 col-xl-4 col-md-6">
+                    <div class="col-sm-6 col-xl-3 col-md-6">
                         <div id="latest" class="bg-light rounded d-flex align-items-center justify-content-between p-4">
                             <img class="latest" :src="posts[posts.length-3].img" alt="">
                             <div class="ms-6">
@@ -28,19 +28,35 @@
                                 <h6 class="mb-0">{{posts[posts.length-3].category}}</h6>
                             </div>
                         </div>
+                    </div><div class="col-sm-6 col-xl-3 col-md-6">
+                        <div id="latest" class="bg-light rounded d-flex align-items-center justify-content-between p-4">
+                            <img class="latest" :src="posts[posts.length-3].img" alt="">
+                            <div class="ms-6">
+                                <p class="mb-2">{{posts[posts.length-4].title}}</p>
+                                <h6 class="mb-0">{{posts[posts.length-4].category}}</h6>
+                            </div>
+                        </div>
                     </div>
 
 <br> <br>
 <!-- CATS -->
- <div class="col-sm-6 col-xl-3">
-<h1>categories</h1> 
-<button @click="setCategory(null)">All</button>
-<button @click="setCategory('skincare')">skincare</button>
-<button @click="setCategory('movement')">movement</button>
-<button @click="setCategory('feeling toolkit')">feeling toolkit</button>
+<div class="row">
 
+
+<h1 class="display-4">categories</h1> 
+ <div class="col-sm-12 col-xl-12 col-md-12  d-flex justify-content-center"  >
+<button class="cat" @click="setCategory(null)">All</button>
+<button class="cat" @click="setCategory('skincare')">skincare</button>
+<button class="cat" @click="setCategory('movement')">movement</button>
+<button class="cat" @click="setCategory('feeling toolkit')">feeling toolkit</button>
+
+
+       </div>
+       </div>
+       <div class="row">
 
 <!-- end -->
+<div class="col-sm-6 col-xl-3">
          <label>
         Sort Title:
         <select v-model="title" @change="sortTitle(title)">
@@ -49,9 +65,11 @@
           <option value="desc">Descending</option>
         </select>
       </label>
-      <br> <br>
           <input type="text"  placeholder="search blogs" v-model="search">
        </div>
+       </div>
+
+      <br> <br>
        <h1 class="display-4">Blogs</h1>
 
 <div class="posts-container" v-if="posts">
@@ -177,7 +195,22 @@ return this.posts.filter((post) => {
 };
 </script>
 <style scoped>
-
+                                              /* Categories */
+.cat{
+  margin-right: 10px;
+   font-size: 16px;
+   padding: 14px 28px;
+   background-color: white;
+   border-left: 2px solid black;
+   border-right: 0;
+   border-top: 0;
+   border-bottom: 2px solid black;
+   cursor: pointer;
+}
+.cat:hover{
+  background-color:#04AA6D ;
+  color: white;
+}
 
 
 .all{
@@ -195,7 +228,7 @@ article{
   display: flex;
 }
 
-/* CARDS */
+                                                 /* CARDS */
 
 * {
   box-sizing: border-box;

@@ -1,28 +1,23 @@
 <template>
- 
-
 <div class="container">
   <div class="row">
-    <div class="col">
+    <div id="call-to-action" class="col">
      <h1 class="display-6"><strong>Your journey begins here</strong></h1>
-     <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Quaerat reprehenderit minus molestiae velit provident atque adipisci cumque assumenda saepe, rerum fugit reiciendis labore necessitatibus recusandae. Repudiandae sint quidem blanditiis accusantium.</p>
+     <p>Dont wait for monday to come around. Start today. Start with us.</p>
 		     <button class="col btn btn-green-moon btn-rounded"> 
           <router-link :to="{name :'register'}"> 
              Start your journey
           </router-link>
          </button>
     </div>
-    <div class="col">
-    <img src="https://i.postimg.cc/RZYGYhNL/avenue-815297.jpg" class="rounded float-end" alt="...">
+    <div class="col col-md-12 col-sm-12">
+    <img src="https://i.postimg.cc/RZYGYhNL/avenue-815297.jpg" class=" float-end" alt="...">
     </div>
   </div>
 </div>
-
-
 </template>
 
 <script>
-// @ is an alias to /src
 
 export default {
   name: 'Home',
@@ -36,11 +31,14 @@ export default {
 img{
   height: 100%;
   width: 100%;
- clip-path: polygon(75% 0%, 100% 50%, 75% 100%, 0% 100%, 25% 50%, 0% 0%);
+  border-radius: 55% 42% 48% 16% / 69% 0% 100% 0%;
 }
-
+.call-to-action{
+  padding-top: 50px;
+}
 .container{
   margin-top: 10%;
+  height: 100vh;
 }
 h1{
   font-family: 'Lobster', cursive;
@@ -57,15 +55,17 @@ p{
     border: 3px solid #eee;
 }
 .btn-rounded {
-    border-radius: 35px;
+    
     text-decoration: none;
-    color: white;
 }
 .btn-green-moon:hover{
   color: #41493b;
 }
 button{
-  text-decoration: none;
-    color: white;
+   border-radius: 35px;
+}
+router-link{
+   text-decoration: none;
+   color: white;
 }
 </style>
