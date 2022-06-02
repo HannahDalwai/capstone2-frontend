@@ -10,7 +10,7 @@
           </router-link>
          </button>
     </div>
-    <div class="col col-md-12 col-sm-12">
+    <div class="col col-md-6 col-sm-12 col-lg-6 col-xl-6">
     <img src="https://i.postimg.cc/RZYGYhNL/avenue-815297.jpg" class=" float-end" alt="...">
     </div>
   </div>
