@@ -1,5 +1,4 @@
 <template>
-
   <div class="container">
     <div class="content">
       <div
@@ -10,7 +9,7 @@
         <div class="contact justify-content-center" id="contact-form">
           <h1 class="form-title">
             <i class="fas fa-user" style="color: #0000ff"></i> <br />
-            CONTACT
+            Get in touch
             <hr />
           </h1>
 

@@ -1,8 +1,9 @@
 <template>
   <header>
-  <h1>CSS-only direction-aware hover effect</h1>
+  <h1>The Beginning</h1>
+   <hr />
   <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias eveniet aliquid rerum cumque veniam unde nesciunt quos ipsum ad. Itaque eaque nemo sapiente eligendi officiis quaerat harum facere nulla aliquam.</p>
-  <p>Also, you can <strong>resize</strong> the window. It keeps working when grid changes.</p>
+  <p>Founded in <strong>2021</strong>as a project. </p>
 </header>
 <div class="container">
    <div class="row">

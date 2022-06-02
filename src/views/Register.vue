@@ -2,7 +2,8 @@
 
 <div class="main-w3layouts wrapper">
   <form @submit.prevent="register" >
-	<h2>Sign Up</h2>
+	<h1>Sign Up</h1>
+   <hr />
 		  <div >
           <input type="text" v-model="fullname" placeholder="Username" required/>
 	  	</div>
@@ -75,3 +76,7 @@ export default {
   },
 };
 </script>
+<style scoped>
+@import url('https://fonts.googleapis.com/css2?family=Lobster&family=Open+Sans:wght@300&display=swap');
+
+</style>

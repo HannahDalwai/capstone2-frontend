@@ -50,4 +50,8 @@ color: rgb(202, 86, 86)
 button.iconic-pencil{
   color: rgb(241, 241, 169);
 }
+*{
+  margin: 0;
+  padding: 0;
+}
 </style>

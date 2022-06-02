@@ -2,7 +2,8 @@
 
 <div class="main-w3layouts wrapper">
     <form @submit.prevent="login">
-      <h2 >Login</h2>
+      <h1 >Login</h1>
+       <hr />
 	<div >
       <input  type="email" v-model="email" placeholder="Email" required/>
   	</div>
@@ -62,3 +63,10 @@ export default {
   },
 };
 </script>
+<style scoped>
+@import url('https://fonts.googleapis.com/css2?family=Lobster&family=Open+Sans:wght@300&display=swap');
+h1{
+  font-family: 'Lobster', cursive;
+}
+
+</style>
