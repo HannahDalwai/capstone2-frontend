@@ -1,22 +1,11 @@
 <template>
-<main>
-<div class="container">
-  <div class="row">
-    <div id="call-to-action" class="col">
-     <h1 class="display-6"><strong>Your journey begins here</strong></h1>
-     <p>Dont wait for monday to come around. Start today. Start with us.</p>
-		     <button class="col btn btn-green-moon btn-rounded"> 
-          <router-link :to="{name :'register'}"> 
-             Start your journey
-          </router-link>
-         </button>
+<section id="hero">
+    <div class="hero-container" data-aos="zoom-in" data-aos-delay="100">
+      <h1>It begins here</h1>
+      <h2>Discover the new your. Unlock your true self</h2>
+      <a href="#about" class="btn-get-started">Get Started</a>
     </div>
-    <!-- <div class="col col-md-6 col-sm-12 col-lg-6 col-xl-6">
-    <img src="https://i.postimg.cc/y8Nkfk6r/casey-horner-4r-DCa5h-Bl-Cs-unsplash.jpg" class=" float-end" alt="...">
-    </div> -->
-  </div>
-</div>
-</main>
+  </section>
 </template>
 
 <script>
@@ -30,53 +19,87 @@ export default {
 </script>
 <style scoped>
 @import url('https://fonts.googleapis.com/css2?family=Lobster&family=Open+Sans:wght@300&display=swap');
-main{
-  background: linear-gradient( rgba(48, 45, 45, 0.5), rgba(0, 0, 0, 0.5) ), url("https://i.postimg.cc/y8Nkfk6r/casey-horner-4r-DCa5h-Bl-Cs-unsplash.jpg");
-  background-position: center;background-attachment: fixed;
-  background-repeat: no-repeat;
-  background-size: cover;
-  margin: 0;
-  padding:0;
-
+.hero-container{
+  padding: 0 !important;
+  margin: 0 !important;
 }
-.call-to-action{
-  padding-top: 50px;
-}
- .container{
-   margin: 0;
-   padding: 0;
+#hero {
+  width: 100%;
   height: 100vh;
- }
-h1{
-  font-family: 'Lobster', cursive;
-  color: white;
+  background: url("https://i.postimg.cc/y8Nkfk6r/casey-horner-4r-DCa5h-Bl-Cs-unsplash.jpg");
+  background-size: cover;
+  position: relative;
+  padding: auto;
+  margin: 0 !important;
 }
-
-p{
-  font-family: 'Open Sans', sans-serif;
-  color: white;
-  
+@media (min-width: 1024px) {
+  #hero {
+    background-attachment: fixed;
+  }
 }
-.btn-green-moon {
-    background: #56ab2f;  /* fallback for old browsers */
-    background: -webkit-linear-gradient(to right, #a8e063, #56ab2f);  /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to right, #a8e063, #56ab2f); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
-    color: #fff;
-    border: 3px solid #eee;
+#hero:before {
+  content: "";
+  background: rgba(0, 0, 0, 0.6);
+  position: absolute;
+  bottom: 0;
+  top: 0;
+  left: 0;
+  right: 0;
 }
-.btn-rounded {
-    
-    text-decoration: none;
+#hero .hero-container {
+  position: absolute;
+  bottom: 0;
+  top: 0;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  text-align: center;
 }
-.btn-green-moon:hover{
-  color: #41493b;
+#hero h1 {
+  margin: 30px 0 10px 0;
+  font-size: 48px;
+  font-weight: 700;
+  line-height: 56px;
+  text-transform: uppercase;
+  color: #fff;
 }
-button{
-   border-radius: 35px;
+@media (max-width: 768px) {
+  #hero h1 {
+    font-size: 28px;
+    line-height: 36px;
+  }
 }
-a{
-   text-decoration: none !important;
-   color: white !important;
-   padding: 10px 10px 10px 10px;
+#hero h2 {
+  color: #eee;
+  margin-bottom: 50px;
+  font-size: 24px;
+}
+@media (max-width: 768px) {
+  #hero h2 {
+    font-size: 18px;
+    line-height: 24px;
+    margin-bottom: 30px;
+  }
+}
+#hero .btn-get-started {
+  font-family: "Poppins", sans-serif;
+  text-transform: uppercase;
+  font-weight: 500;
+  font-size: 16px;
+  letter-spacing: 1px;
+  display: inline-block;
+  padding: 8px 28px;
+  border-radius: 50px;
+  transition: 0.5s;
+  margin: 10px;
+  border: 2px solid #fff;
+  color: #fff;
+}
+#hero .btn-get-started:hover {
+  background: #2dc997;
+  border: 2px solid #2dc997;
 }
 </style>
