@@ -54,6 +54,7 @@
 
   <!-- END -->
  <h1>users</h1>
+ <hr>
 <!-- users table -->
 <div class="table-responsive">  
 <table >
@@ -90,6 +91,7 @@
    </div>
 
 <h1>blogs</h1>
+<hr>
 <!-- blogs table -->
 <div class="table-responsive">  
 <table >
@@ -264,11 +266,6 @@ computed: {
 };
 </script>
 <style scoped>
-
-.container {
-   width: 950px;
-   margin: auto;
-}
 table {
    width: 100%;
 }

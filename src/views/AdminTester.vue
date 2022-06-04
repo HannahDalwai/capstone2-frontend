@@ -1,18 +1,7 @@
 <template>
-
-
-
-
-
-
 <div v-if="posts" class="all">
-
-
 <!-- TESTING -->
 <div v-for="user of filteredUsers" :key="user._id">
-
-
-
   <!-- Modal -->
 <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
   <div class="modal-dialog">
@@ -60,15 +49,10 @@
     </div>
   </div>
 </div>
-
-
 </div>
-
-  <!-- END -->
-
-
- 
+  <!-- END --> 
  <h1>users</h1>
+   <hr/>
 <!-- users table -->
 <table >
   <tr class="table-header">
@@ -117,6 +101,7 @@
 
 
 <h1>blogs</h1>
+<hr/>
 <!-- blogs table -->
 
 <table >
@@ -159,24 +144,14 @@
 
     </tr>
   </table>
-
-
-
-
  </div>
-
-
-    
   <div v-else>
     Loading blogs... 
     <Loader/>
  </div>            
 </template>
-
-
 <script>
 import Loader from '../components/Loader.vue'
-
 export default {
   props:["post","idx"],
   components: { Loader },
@@ -210,8 +185,6 @@ export default {
       this.filteredUsers = data
     })
         .catch(err => console.log(err.message))
-
-
   },
    methods: {
 
@@ -316,19 +289,14 @@ computed: {
    width: 950px;
    margin: auto;
 }
-
-
-
 table {
    width: 100%;
 }
-
 th, td {
    padding-top: 15px;
    padding-bottom: 15px;
    padding-left: 15px;
 }
-
 th {
    text-align: left;
    background-color: #F2F2F2;
@@ -390,21 +358,15 @@ a {
    color: #3498DB;
    text-decoration: none;
 }
-
-
 i {
    float: right;
    padding: 0px 15px;
    color: #787D80;
    font-size: 12px;
 }
-
 tr.table-header {
   border: 1px solid #BBBEBF;
 }
-
-
-
 input[type=text] {
   padding: 6px;
   margin-top: 5px;
@@ -413,6 +375,4 @@ input[type=text] {
   border: 1px solid #9A9DA0;
   border-radius: 2px;
 }
-
-
 </style>

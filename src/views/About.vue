@@ -1,16 +1,18 @@
 <template>
   <header>
-  <h1>The Beginning</h1>
+  <h1>Our Beginning</h1>
    <hr />
-  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias eveniet aliquid rerum cumque veniam unde nesciunt quos ipsum ad. Itaque eaque nemo sapiente eligendi officiis quaerat harum facere nulla aliquam.</p>
-  <p>Founded in <strong>2021</strong>as a project. </p>
+  
 </header>
 <div class="container">
    <div class="row">
-    <div class="col">
+    <div class="col col-lg-">
  <img src="https://i.postimg.cc/yYnJPRbT/Untitled-design.png" alt="">
     </div>
-    
+     <div class="col col-lg-6 ">
+ <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestias eveniet aliquid rerum cumque veniam unde nesciunt quos ipsum ad. Itaque eaque nemo sapiente eligendi officiis quaerat harum facere nulla aliquam.</p>
+  <p>Founded in <strong>2021</strong>as a project. </p>
+    </div>
    
   </div>
   </div>

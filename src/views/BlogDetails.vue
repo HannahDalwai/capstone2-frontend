@@ -354,17 +354,18 @@ export default {
 };
 </script>
 
-<style>
+<style scoped>
 #socail{
      padding: 25px 5px 5px 5px;
-    background-color: rgb(161, 182, 161);
+    background-color: rgb(145, 234, 145);
+    color:white;
     border-radius: 50%;
 
 }
 #socail:hover{
     
-    background-color: rgb(157, 157, 211);
-    color: white;
+    background-color: rgb(255, 255, 255);
+    color: rgb(145, 234, 145);
 }
 #author{
   clip-path: circle(50% at 50% 50%);
